@@ -1,0 +1,12 @@
+#include "stdafx.h"
+
+#include "cmdSource.imp.h"
+
+
+BOOL cmdSourceImp(TokenCommand *Command) {
+	// check parameters
+
+	// go
+
+	return TRUE;
+}

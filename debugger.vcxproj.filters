@@ -1,0 +1,401 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Source Files">
+      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
+      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
+    </Filter>
+    <Filter Include="Header Files">
+      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
+      <Extensions>h;hh;hpp;hxx;hm;inl;inc;xsd</Extensions>
+    </Filter>
+    <Filter Include="Resource Files">
+      <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
+      <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
+    </Filter>
+    <Filter Include="Source Files\console">
+      <UniqueIdentifier>{e68ab53f-40e0-4d14-9f10-1df5491f140b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\debugger">
+      <UniqueIdentifier>{7dc0c5fb-78a4-46d2-a757-c01423f91454}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\debugger\workerProcess">
+      <UniqueIdentifier>{d6fdeede-fec9-4980-91f5-071d14883209}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\debugger\debugEvents">
+      <UniqueIdentifier>{46401052-55b3-40b9-b1b5-45e88e8e83ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands">
+      <UniqueIdentifier>{c69a6a0f-d2dc-4945-b319-84669c93a73f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commandParser">
+      <UniqueIdentifier>{a613b493-05af-445c-8cf8-1aa71c0c11a1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commandParser\lexer">
+      <UniqueIdentifier>{ef950f52-ff44-429e-bfa4-f6147a691b37}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commandParser\parser">
+      <UniqueIdentifier>{2330c497-8f02-43e6-bb16-ec1429c0f09e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands">
+      <UniqueIdentifier>{10f3f910-c429-40c9-a921-e362e6256029}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\show">
+      <UniqueIdentifier>{a9ba8c9e-27f1-4a63-bc79-b81775171967}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\exit">
+      <UniqueIdentifier>{17443455-28bc-4345-bbd6-3e80902afb01}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\info">
+      <UniqueIdentifier>{c9613f79-a126-428d-b772-bed767db8dbf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\kill">
+      <UniqueIdentifier>{73a5d779-ae11-437f-9185-dc003e0ef1ca}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\detach">
+      <UniqueIdentifier>{6aed00fa-e644-4178-a762-81cf9e3c2bad}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\attach">
+      <UniqueIdentifier>{9e7784af-2415-4ff1-9f69-a1f2ac1be02f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\debugee">
+      <UniqueIdentifier>{9b92c0c2-ed56-47e4-ba75-2376ae170187}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\debugee\pipeAPI">
+      <UniqueIdentifier>{5ce6cae2-4f34-4fc0-b7b6-6fd3477cb931}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\backtrace">
+      <UniqueIdentifier>{e05400ab-aba7-4138-bc61-f4d23734a2d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\frame">
+      <UniqueIdentifier>{b131b5a6-d370-4694-8416-a754edc621ba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\continue">
+      <UniqueIdentifier>{1ff3b1db-9de4-4499-807c-ff9eeefbde6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\source">
+      <UniqueIdentifier>{a7e7e180-6c41-4437-8cef-99daa19a1b9b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\break">
+      <UniqueIdentifier>{2574a9e2-69e1-4d2c-9691-8b1ab096d708}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\delete">
+      <UniqueIdentifier>{85cce063-0631-4da1-aa0f-7818da7c0666}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\next">
+      <UniqueIdentifier>{cb060870-c592-486e-aa82-b153d82a03a3}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\dummy">
+      <UniqueIdentifier>{b48edc84-a7e0-475a-93ac-be153597df9f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\quit">
+      <UniqueIdentifier>{be6cb7b9-6211-4acd-ae97-370c7382d099}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\step">
+      <UniqueIdentifier>{3a170337-2c6b-4a95-afea-5cd4a79d3eec}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\finish">
+      <UniqueIdentifier>{ca3950b9-5a4f-42cb-b7aa-0a07d06d07f5}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\info\frame">
+      <UniqueIdentifier>{f0ab380b-d619-478e-b031-b48e6220e3bb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\info\locals">
+      <UniqueIdentifier>{d4548176-94c2-46ac-a9d0-100ae6c209d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\info\args">
+      <UniqueIdentifier>{a770b2dd-42ee-46bf-bab2-b8ec2aef93d6}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\whatis">
+      <UniqueIdentifier>{7b42a340-f218-4310-b932-9137d27324d0}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\output">
+      <UniqueIdentifier>{1769030d-7d27-45e4-8a7e-241cc111b784}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\set">
+      <UniqueIdentifier>{1017235b-153f-4156-88c8-ed9d81b265ed}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\catch">
+      <UniqueIdentifier>{655200ac-0dbc-48c9-baf7-d6c6c9b650d4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\tbreak">
+      <UniqueIdentifier>{cd1ac071-199b-4e66-b755-b8e19da8e659}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\clearallbreakpoints">
+      <UniqueIdentifier>{56e6fa1c-a794-4e00-a0ef-93cc9658705b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\commands\commands\info\globals">
+      <UniqueIdentifier>{d2edd2e5-d3fb-4bed-ac18-38333e9935ec}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="consoleThread.h">
+      <Filter>Source Files\console</Filter>
+    </ClInclude>
+    <ClInclude Include="workerProcessThread.h">
+      <Filter>Source Files\debugger\workerProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="main.h">
+      <Filter>Source Files</Filter>
+    </ClInclude>
+    <ClInclude Include="debugEvents.h">
+      <Filter>Source Files\debugger\debugEvents</Filter>
+    </ClInclude>
+    <ClInclude Include="debugeePipe.imp.h">
+      <Filter>Source Files\debugee\pipeAPI</Filter>
+    </ClInclude>
+    <ClInclude Include="debugeeInterface.h">
+      <Filter>Source Files\debugee</Filter>
+    </ClInclude>
+    <ClInclude Include="commandParser.imp.h">
+      <Filter>Source Files\commands\commandParser</Filter>
+    </ClInclude>
+    <ClInclude Include="lemon.commands.h">
+      <Filter>Source Files\commands\commandParser\parser</Filter>
+    </ClInclude>
+    <ClInclude Include="commands.h">
+      <Filter>Source Files\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="commandsDataStructures.h">
+      <Filter>Source Files\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="consoleLoger.h">
+      <Filter>Source Files\console</Filter>
+    </ClInclude>
+    <ClInclude Include="consoleDataStructures.h">
+      <Filter>Source Files\console</Filter>
+    </ClInclude>
+    <ClInclude Include="debugeeInterfaceDataStructures.h">
+      <Filter>Source Files\debugee</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdDetach.imp.h">
+      <Filter>Source Files\commands\commands\detach</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdShow.imp.h">
+      <Filter>Source Files\commands\commands\show</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdExit.imp.h">
+      <Filter>Source Files\commands\commands\exit</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdInfo.imp.h">
+      <Filter>Source Files\commands\commands\info</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdKill.imp.h">
+      <Filter>Source Files\commands\commands\kill</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdBacktrace.imp.h">
+      <Filter>Source Files\commands\commands\backtrace</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdFrame.imp.h">
+      <Filter>Source Files\commands\commands\frame</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdContinue.imp.h">
+      <Filter>Source Files\commands\commands\continue</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdSource.imp.h">
+      <Filter>Source Files\commands\commands\source</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdBreak.imp.h">
+      <Filter>Source Files\commands\commands\break</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdDelete.imp.h">
+      <Filter>Source Files\commands\commands\delete</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdNext.imp.h">
+      <Filter>Source Files\commands\commands\next</Filter>
+    </ClInclude>
+    <ClInclude Include="commandUtils.h">
+      <Filter>Source Files\commands</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdDummy.imp.h">
+      <Filter>Source Files\commands\commands\dummy</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdQuit.imp.h">
+      <Filter>Source Files\commands\commands\quit</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="globals.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdStep.imp.h">
+      <Filter>Source Files\commands\commands\step</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdFinish.imp.h">
+      <Filter>Source Files\commands\commands\finish</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdInfo.Frame.imp.h">
+      <Filter>Source Files\commands\commands\info\frame</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdInfo.Locals.imp.h">
+      <Filter>Source Files\commands\commands\info\locals</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdInfo.Args.imp.h">
+      <Filter>Source Files\commands\commands\info\args</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdWhatis.imp.h">
+      <Filter>Source Files\commands\commands\whatis</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdInfoUtils.h">
+      <Filter>Source Files\commands\commands\info</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdOutput.imp.h">
+      <Filter>Source Files\commands\commands\output</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdSet.imp.h">
+      <Filter>Source Files\commands\commands\set</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdCatch.imp.h">
+      <Filter>Source Files\commands\commands\catch</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdTbreak.imp.h">
+      <Filter>Source Files\commands\commands\tbreak</Filter>
+    </ClInclude>
+    <ClInclude Include="cmdClearAllBreakPoints.h">
+      <Filter>Source Files\commands\commands\clearallbreakpoints</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="consoleThread.c">
+      <Filter>Source Files\console</Filter>
+    </ClCompile>
+    <ClCompile Include="workerProcessThread.c">
+      <Filter>Source Files\debugger\workerProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="main.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="debugEvents.c">
+      <Filter>Source Files\debugger\debugEvents</Filter>
+    </ClCompile>
+    <ClCompile Include="debugeePipe.imp.c">
+      <Filter>Source Files\debugee\pipeAPI</Filter>
+    </ClCompile>
+    <ClCompile Include="debugeeInterface.c">
+      <Filter>Source Files\debugee</Filter>
+    </ClCompile>
+    <ClCompile Include="commandParser.imp.c">
+      <Filter>Source Files\commands\commandParser</Filter>
+    </ClCompile>
+    <ClCompile Include="lexer.commands.c">
+      <Filter>Source Files\commands\commandParser\lexer</Filter>
+    </ClCompile>
+    <ClCompile Include="lemon.commands.c">
+      <Filter>Source Files\commands\commandParser\parser</Filter>
+    </ClCompile>
+    <ClCompile Include="commands.c">
+      <Filter>Source Files\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="commandsDataStructures.c">
+      <Filter>Source Files\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="consoleLoger.c">
+      <Filter>Source Files\console</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdDetach.imp.c">
+      <Filter>Source Files\commands\commands\detach</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdShow.imp.c">
+      <Filter>Source Files\commands\commands\show</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdExit.imp.c">
+      <Filter>Source Files\commands\commands\exit</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdInfo.imp.c">
+      <Filter>Source Files\commands\commands\info</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdKill.imp.c">
+      <Filter>Source Files\commands\commands\kill</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdAttach.imp.c">
+      <Filter>Source Files\commands\commands\attach</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdBacktrace.imp.c">
+      <Filter>Source Files\commands\commands\backtrace</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdFrame.imp.c">
+      <Filter>Source Files\commands\commands\frame</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdContinue.imp.c">
+      <Filter>Source Files\commands\commands\continue</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdSource.imp.c">
+      <Filter>Source Files\commands\commands\source</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdBreak.imp.c">
+      <Filter>Source Files\commands\commands\break</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdDelete.imp.c">
+      <Filter>Source Files\commands\commands\delete</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdNext.imp.c">
+      <Filter>Source Files\commands\commands\next</Filter>
+    </ClCompile>
+    <ClCompile Include="commandUtils.c">
+      <Filter>Source Files\commands</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdDummy.imp.c">
+      <Filter>Source Files\commands\commands\dummy</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdQuit.imp.c">
+      <Filter>Source Files\commands\commands\quit</Filter>
+    </ClCompile>
+    <ClCompile Include="globals.c">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdStep.imp.c">
+      <Filter>Source Files\commands\commands\step</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdFinish.imp.c">
+      <Filter>Source Files\commands\commands\finish</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdInfo.Frame.imp.c">
+      <Filter>Source Files\commands\commands\info\frame</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdInfo.Locals.imp.c">
+      <Filter>Source Files\commands\commands\info\locals</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdInfo.Args.imp.c">
+      <Filter>Source Files\commands\commands\info\args</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdWhatis.imp.c">
+      <Filter>Source Files\commands\commands\whatis</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdInfoUtils.c">
+      <Filter>Source Files\commands\commands\info</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdOutput.imp.c">
+      <Filter>Source Files\commands\commands\output</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdSet.imp.c">
+      <Filter>Source Files\commands\commands\set</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdCatch.imp.c">
+      <Filter>Source Files\commands\commands\catch</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdTbreak.imp.c">
+      <Filter>Source Files\commands\commands\tbreak</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdClearAllBreakPoints.c">
+      <Filter>Source Files\commands\commands\clearallbreakpoints</Filter>
+    </ClCompile>
+    <ClCompile Include="cmdInfo.Globals.imp.c">
+      <Filter>Source Files\commands\commands\info\globals</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="lemon.commands.yy">
+      <Filter>Source Files\commands\commandParser\parser</Filter>
+    </None>
+    <None Include="lexer.commands.ll">
+      <Filter>Source Files\commands\commandParser\lexer</Filter>
+    </None>
+    <None Include="cmdAttach.imp.h">
+      <Filter>Source Files\commands\commands\attach</Filter>
+    </None>
+    <None Include="cmdInfo.Globals.imp.h">
+      <Filter>Source Files\commands\commands\info\globals</Filter>
+    </None>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,131 @@
+State 0:
+          start ::= * validcommands
+          start ::= * invalidcommands
+
+                      CMD_SHOW shift        7      
+                      CMD_EXIT shift        10     
+             CMD_ANY_CHARACTER shift-reduce 15     invalidchar ::= CMD_ANY_CHARACTER
+                   CMD_EXECUTE shift-reduce 18     cmdexecutechar ::= CMD_EXECUTE
+                         start accept
+                 validcommands shift        12     
+               invalidcommands shift        11     
+                       command shift-reduce 0      validcommands ::= command
+                          exit shift-reduce 0      validcommands ::= command  /* because exit==command */
+                          show shift-reduce 0      validcommands ::= command  /* because show==command */
+                    cmdexecute shift        9      
+                  invalidchars shift        1      
+                   invalidchar shift        1        /* because invalidchar==invalidchars */
+                cmdexecutechar shift        9        /* because cmdexecutechar==cmdexecute */
+
+State 1:
+          invalidcommands ::= invalidchars * CMD_END_OF_FILE
+          invalidcommands ::= invalidchars * cmdexecute CMD_END_OF_FILE
+          invalidchars ::= invalidchars * invalidchar
+
+               CMD_END_OF_FILE shift-reduce 5      invalidcommands ::= invalidchars CMD_END_OF_FILE
+             CMD_ANY_CHARACTER shift-reduce 15     invalidchar ::= CMD_ANY_CHARACTER
+                   CMD_EXECUTE shift-reduce 18     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        4      
+                   invalidchar shift-reduce 13     invalidchars ::= invalidchars invalidchar
+                cmdexecutechar shift        4        /* because cmdexecutechar==cmdexecute */
+
+State 2:
+          exit ::= CMD_EXIT CMD_SEMI_COLON * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 18     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        5      
+                cmdexecutechar shift        5        /* because cmdexecutechar==cmdexecute */
+
+State 3:
+          show ::= CMD_SHOW showparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 18     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        6      
+                cmdexecutechar shift        6        /* because cmdexecutechar==cmdexecute */
+
+State 4:
+          invalidcommands ::= invalidchars cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 6      invalidcommands ::= invalidchars cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 18     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 16     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 5:
+          exit ::= CMD_EXIT CMD_SEMI_COLON cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 12     exit ::= CMD_EXIT CMD_SEMI_COLON cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 18     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 16     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 6:
+          show ::= CMD_SHOW showparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 1      show ::= CMD_SHOW showparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 18     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 16     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 7:
+          show ::= CMD_SHOW * showparams semicolon cmdexecute CMD_END_OF_FILE
+
+  CMD_SHOW_PARAM_SESSION_COUNT shift-reduce 3      showparams ::= CMD_SHOW_PARAM_SESSION_COUNT
+              CUSTOM_PARAMETER shift-reduce 4      showparams ::= CUSTOM_PARAMETER
+                    showparams shift        8      
+                     {default} reduce       2      showparams ::=
+
+State 8:
+          show ::= CMD_SHOW showparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 19     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        3      
+                     {default} reduce       20     semicolon ::=
+
+State 9:
+     (11) command ::= cmdexecute *
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+                   CMD_EXECUTE shift-reduce 18     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 16     cmdexecute ::= cmdexecute cmdexecutechar
+                     {default} reduce       11     command ::= cmdexecute
+
+State 10:
+          exit ::= CMD_EXIT * CMD_SEMI_COLON cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift        2      
+
+State 11:
+      (8) start ::= invalidcommands *
+
+                             $ reduce       8      start ::= invalidcommands
+
+State 12:
+      (7) start ::= validcommands *
+
+                             $ reduce       7      start ::= validcommands
+
+----------------------------------------------------
+Symbols:
+    0: $:
+    1: CMD_SHOW
+    2: CMD_END_OF_FILE
+    3: CMD_SHOW_PARAM_SESSION_COUNT
+    4: CUSTOM_PARAMETER
+    5: CMD_EXIT
+    6: CMD_SEMI_COLON
+    7: CMD_ANY_CHARACTER
+    8: CMD_EXECUTE
+    9: error:
+   10: start: CMD_SHOW CMD_EXIT CMD_ANY_CHARACTER CMD_EXECUTE
+   11: validcommands: CMD_SHOW CMD_EXIT CMD_EXECUTE
+   12: invalidcommands: CMD_ANY_CHARACTER
+   13: command: CMD_SHOW CMD_EXIT CMD_EXECUTE
+   14: exit: CMD_EXIT
+   15: show: CMD_SHOW
+   16: cmdexecute: CMD_EXECUTE
+   17: showparams: <lambda> CMD_SHOW_PARAM_SESSION_COUNT CUSTOM_PARAMETER
+   18: semicolon: <lambda> CMD_SEMI_COLON
+   19: invalidchars: CMD_ANY_CHARACTER
+   20: invalidchar: CMD_ANY_CHARACTER
+   21: cmdexecutechar: CMD_EXECUTE

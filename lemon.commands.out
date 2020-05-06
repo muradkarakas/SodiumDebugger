@@ -1,0 +1,974 @@
+State 0:
+          start ::= * validcommands
+          start ::= * invalidcommands
+
+     CMD_CLEAR_ALL_BREAKPOINTS shift        28     
+                     CMD_CATCH shift        87     
+                       CMD_SET shift        29     
+                    CMD_OUTPUT shift        84     
+                    CMD_WHATIS shift        82     
+                      CMD_QUIT shift        80     
+                     CMD_DUMMY shift        79     
+                      CMD_NEXT shift        78     
+                    CMD_FINISH shift        77     
+                      CMD_STEP shift        76     
+                    CMD_DELETE shift        75     
+                     CMD_BREAK shift        16     
+                    CMD_TBREAK shift        14     
+                    CMD_SOURCE shift        69     
+                  CMD_CONTINUE shift        67     
+                     CMD_FRAME shift        66     
+                 CMD_BACKTRACE shift        40     
+                    CMD_ATTACH shift        63     
+                    CMD_DETACH shift        61     
+                      CMD_KILL shift        60     
+                      CMD_INFO shift        30     
+                      CMD_SHOW shift        34     
+                      CMD_EXIT shift        57     
+             CMD_ANY_CHARACTER shift-reduce 90     invalidchar ::= CMD_ANY_CHARACTER
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                         start accept
+                 validcommands shift        1      
+               invalidcommands shift        92     
+                       command shift-reduce 0      validcommands ::= command
+                          info shift-reduce 0      validcommands ::= command  /* because info==command */
+                          kill shift-reduce 0      validcommands ::= command  /* because kill==command */
+                          exit shift-reduce 0      validcommands ::= command  /* because exit==command */
+                          quit shift-reduce 0      validcommands ::= command  /* because quit==command */
+                          show shift-reduce 0      validcommands ::= command  /* because show==command */
+                        attach shift-reduce 0      validcommands ::= command  /* because attach==command */
+                        detach shift-reduce 0      validcommands ::= command  /* because detach==command */
+                    cmdexecute shift        90     
+                     backtrace shift-reduce 0      validcommands ::= command  /* because backtrace==command */
+                         frame shift-reduce 0      validcommands ::= command  /* because frame==command */
+                      continue shift-reduce 0      validcommands ::= command  /* because continue==command */
+                        source shift-reduce 0      validcommands ::= command  /* because source==command */
+                         break shift-reduce 0      validcommands ::= command  /* because break==command */
+                        tbreak shift-reduce 0      validcommands ::= command  /* because tbreak==command */
+                        delete shift-reduce 0      validcommands ::= command  /* because delete==command */
+                          next shift-reduce 0      validcommands ::= command  /* because next==command */
+                          step shift-reduce 0      validcommands ::= command  /* because step==command */
+                        finish shift-reduce 0      validcommands ::= command  /* because finish==command */
+                         dummy shift-reduce 0      validcommands ::= command  /* because dummy==command */
+                        whatis shift-reduce 0      validcommands ::= command  /* because whatis==command */
+                        output shift-reduce 0      validcommands ::= command  /* because output==command */
+                           set shift-reduce 0      validcommands ::= command  /* because set==command */
+                         catch shift-reduce 0      validcommands ::= command  /* because catch==command */
+           clearallbreakpoints shift-reduce 0      validcommands ::= command  /* because clearallbreakpoints==command */
+                  invalidchars shift        2      
+                   invalidchar shift        2        /* because invalidchar==invalidchars */
+                cmdexecutechar shift        90       /* because cmdexecutechar==cmdexecute */
+
+State 1:
+     (60) start ::= validcommands *
+          validcommands ::= validcommands * command
+
+                             $ reduce       60     start ::= validcommands
+     CMD_CLEAR_ALL_BREAKPOINTS shift        28     
+                     CMD_CATCH shift        87     
+                       CMD_SET shift        29     
+                    CMD_OUTPUT shift        84     
+                    CMD_WHATIS shift        82     
+                      CMD_QUIT shift        80     
+                     CMD_DUMMY shift        79     
+                      CMD_NEXT shift        78     
+                    CMD_FINISH shift        77     
+                      CMD_STEP shift        76     
+                    CMD_DELETE shift        75     
+                     CMD_BREAK shift        16     
+                    CMD_TBREAK shift        14     
+                    CMD_SOURCE shift        69     
+                  CMD_CONTINUE shift        67     
+                     CMD_FRAME shift        66     
+                 CMD_BACKTRACE shift        40     
+                    CMD_ATTACH shift        63     
+                    CMD_DETACH shift        61     
+                      CMD_KILL shift        60     
+                      CMD_INFO shift        30     
+                      CMD_SHOW shift        34     
+                      CMD_EXIT shift        57     
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                       command shift-reduce 62     validcommands ::= validcommands command
+                          info shift-reduce 62     validcommands ::= validcommands command  /* because info==command */
+                          kill shift-reduce 62     validcommands ::= validcommands command  /* because kill==command */
+                          exit shift-reduce 62     validcommands ::= validcommands command  /* because exit==command */
+                          quit shift-reduce 62     validcommands ::= validcommands command  /* because quit==command */
+                          show shift-reduce 62     validcommands ::= validcommands command  /* because show==command */
+                        attach shift-reduce 62     validcommands ::= validcommands command  /* because attach==command */
+                        detach shift-reduce 62     validcommands ::= validcommands command  /* because detach==command */
+                    cmdexecute shift        90     
+                     backtrace shift-reduce 62     validcommands ::= validcommands command  /* because backtrace==command */
+                         frame shift-reduce 62     validcommands ::= validcommands command  /* because frame==command */
+                      continue shift-reduce 62     validcommands ::= validcommands command  /* because continue==command */
+                        source shift-reduce 62     validcommands ::= validcommands command  /* because source==command */
+                         break shift-reduce 62     validcommands ::= validcommands command  /* because break==command */
+                        tbreak shift-reduce 62     validcommands ::= validcommands command  /* because tbreak==command */
+                        delete shift-reduce 62     validcommands ::= validcommands command  /* because delete==command */
+                          next shift-reduce 62     validcommands ::= validcommands command  /* because next==command */
+                          step shift-reduce 62     validcommands ::= validcommands command  /* because step==command */
+                        finish shift-reduce 62     validcommands ::= validcommands command  /* because finish==command */
+                         dummy shift-reduce 62     validcommands ::= validcommands command  /* because dummy==command */
+                        whatis shift-reduce 62     validcommands ::= validcommands command  /* because whatis==command */
+                        output shift-reduce 62     validcommands ::= validcommands command  /* because output==command */
+                           set shift-reduce 62     validcommands ::= validcommands command  /* because set==command */
+                         catch shift-reduce 62     validcommands ::= validcommands command  /* because catch==command */
+           clearallbreakpoints shift-reduce 62     validcommands ::= validcommands command  /* because clearallbreakpoints==command */
+                cmdexecutechar shift        90       /* because cmdexecutechar==cmdexecute */
+
+State 2:
+          invalidcommands ::= invalidchars * CMD_END_OF_FILE
+          invalidcommands ::= invalidchars * cmdexecute CMD_END_OF_FILE
+          invalidchars ::= invalidchars * invalidchar
+
+               CMD_END_OF_FILE shift-reduce 58     invalidcommands ::= invalidchars CMD_END_OF_FILE
+             CMD_ANY_CHARACTER shift-reduce 90     invalidchar ::= CMD_ANY_CHARACTER
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        31     
+                   invalidchar shift-reduce 88     invalidchars ::= invalidchars invalidchar
+                cmdexecutechar shift        31       /* because cmdexecutechar==cmdexecute */
+
+State 3:
+          exit ::= CMD_EXIT semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        32     
+                cmdexecutechar shift        32       /* because cmdexecutechar==cmdexecute */
+
+State 4:
+          show ::= CMD_SHOW showparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        33     
+                cmdexecutechar shift        33       /* because cmdexecutechar==cmdexecute */
+
+State 5:
+          info ::= CMD_INFO infoparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        35     
+                cmdexecutechar shift        35       /* because cmdexecutechar==cmdexecute */
+
+State 6:
+          kill ::= CMD_KILL semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        36     
+                cmdexecutechar shift        36       /* because cmdexecutechar==cmdexecute */
+
+State 7:
+          detach ::= CMD_DETACH semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        37     
+                cmdexecutechar shift        37       /* because cmdexecutechar==cmdexecute */
+
+State 8:
+          attach ::= CMD_ATTACH attachparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        38     
+                cmdexecutechar shift        38       /* because cmdexecutechar==cmdexecute */
+
+State 9:
+          backtrace ::= CMD_BACKTRACE backtraceparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        39     
+                cmdexecutechar shift        39       /* because cmdexecutechar==cmdexecute */
+
+State 10:
+          frame ::= CMD_FRAME frameparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        41     
+                cmdexecutechar shift        41       /* because cmdexecutechar==cmdexecute */
+
+State 11:
+          continue ::= CMD_CONTINUE semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        42     
+                cmdexecutechar shift        42       /* because cmdexecutechar==cmdexecute */
+
+State 12:
+          source ::= CMD_SOURCE sourceparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        43     
+                cmdexecutechar shift        43       /* because cmdexecutechar==cmdexecute */
+
+State 13:
+          tbreak ::= CMD_TBREAK tbreakparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        44     
+                cmdexecutechar shift        44       /* because cmdexecutechar==cmdexecute */
+
+State 14:
+          tbreak ::= CMD_TBREAK * tbreakparams semicolon cmdexecute CMD_END_OF_FILE
+
+  CMD_TBREAK_PARAM_DOUBLEQUOTE shift-reduce 87     tbreakdoublequote ::= CMD_TBREAK_PARAM_DOUBLEQUOTE
+                  tbreakparams shift        71     
+             tbreakdoublequote shift        93     
+
+State 15:
+          break ::= CMD_BREAK breakparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        45     
+                cmdexecutechar shift        45       /* because cmdexecutechar==cmdexecute */
+
+State 16:
+          break ::= CMD_BREAK * breakparams semicolon cmdexecute CMD_END_OF_FILE
+
+   CMD_BREAK_PARAM_DOUBLEQUOTE shift-reduce 32     breakdoublequote ::= CMD_BREAK_PARAM_DOUBLEQUOTE
+                   breakparams shift        73     
+              breakdoublequote shift        94     
+
+State 17:
+          delete ::= CMD_DELETE deleteparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        46     
+                cmdexecutechar shift        46       /* because cmdexecutechar==cmdexecute */
+
+State 18:
+          step ::= CMD_STEP semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        47     
+                cmdexecutechar shift        47       /* because cmdexecutechar==cmdexecute */
+
+State 19:
+          finish ::= CMD_FINISH semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        48     
+                cmdexecutechar shift        48       /* because cmdexecutechar==cmdexecute */
+
+State 20:
+          next ::= CMD_NEXT semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        49     
+                cmdexecutechar shift        49       /* because cmdexecutechar==cmdexecute */
+
+State 21:
+          dummy ::= CMD_DUMMY semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        50     
+                cmdexecutechar shift        50       /* because cmdexecutechar==cmdexecute */
+
+State 22:
+          quit ::= CMD_QUIT semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        51     
+                cmdexecutechar shift        51       /* because cmdexecutechar==cmdexecute */
+
+State 23:
+          whatis ::= CMD_WHATIS whatisparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        52     
+                cmdexecutechar shift        52       /* because cmdexecutechar==cmdexecute */
+
+State 24:
+          output ::= CMD_OUTPUT outputparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        53     
+                cmdexecutechar shift        53       /* because cmdexecutechar==cmdexecute */
+
+State 25:
+          set ::= CMD_SET setparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        54     
+                cmdexecutechar shift        54       /* because cmdexecutechar==cmdexecute */
+
+State 26:
+          catch ::= CMD_CATCH catchparams semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        55     
+                cmdexecutechar shift        55       /* because cmdexecutechar==cmdexecute */
+
+State 27:
+          clearallbreakpoints ::= CMD_CLEAR_ALL_BREAKPOINTS clearallbreakpointsparam semicolon * cmdexecute CMD_END_OF_FILE
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                    cmdexecute shift        56     
+                cmdexecutechar shift        56       /* because cmdexecutechar==cmdexecute */
+
+State 28:
+          clearallbreakpoints ::= CMD_CLEAR_ALL_BREAKPOINTS * clearallbreakpointsparam semicolon cmdexecute CMD_END_OF_FILE
+
+CMD_CLEARALLBREAKPOINT_PARAM_DOUBLEQUOTE shift-reduce 3      clearallbreakpointsparamdoublequote ::= CMD_CLEARALLBREAKPOINT_PARAM_DOUBLEQUOTE
+      clearallbreakpointsparam shift        89     
+clearallbreakpointsparamdoublequote shift        106    
+
+State 29:
+          set ::= CMD_SET * setparams semicolon cmdexecute CMD_END_OF_FILE
+
+               CMD_SET_CONFIRM shift        105    
+                 CMD_SET_WIDTH shift        104    
+                CMD_SET_HEIGHT shift        103    
+            CMD_SET_BREAKPOINT shift        102    
+                 CMD_SET_PRINT shift        91     
+        CMD_SET_UNWINDONSIGNAL shift        98     
+    CMD_SET_DISASSEMBLY_FLAVOR shift        97     
+                CMD_SET_PROMPT shift        96     
+                     setparams shift        85     
+
+State 30:
+          info ::= CMD_INFO * infoparams semicolon cmdexecute CMD_END_OF_FILE
+
+         CMD_INFO_PARAM_LOCALS shift-reduce 50     infoparams ::= CMD_INFO_PARAM_LOCALS
+           CMD_INFO_PARAM_ARGS shift-reduce 51     infoparams ::= CMD_INFO_PARAM_ARGS
+        CMD_INFO_PARAM_GLOBALS shift-reduce 52     infoparams ::= CMD_INFO_PARAM_GLOBALS
+          CMD_INFO_PARAM_FRAME shift-reduce 53     infoparams ::= CMD_INFO_PARAM_FRAME
+                    infoparams shift        59     
+
+State 31:
+          invalidcommands ::= invalidchars cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 59     invalidcommands ::= invalidchars cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 32:
+          exit ::= CMD_EXIT semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 57     exit ::= CMD_EXIT semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 33:
+          show ::= CMD_SHOW showparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 54     show ::= CMD_SHOW showparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 34:
+          show ::= CMD_SHOW * showparams semicolon cmdexecute CMD_END_OF_FILE
+
+  CMD_SHOW_PARAM_SESSION_COUNT shift-reduce 55     showparams ::= CMD_SHOW_PARAM_SESSION_COUNT
+        CMD_SHOW_PARAM_VERSION shift-reduce 56     showparams ::= CMD_SHOW_PARAM_VERSION
+                    showparams shift        58     
+
+State 35:
+          info ::= CMD_INFO infoparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 49     info ::= CMD_INFO infoparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 36:
+          kill ::= CMD_KILL semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 48     kill ::= CMD_KILL semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 37:
+          detach ::= CMD_DETACH semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 47     detach ::= CMD_DETACH semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 38:
+          attach ::= CMD_ATTACH attachparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 44     attach ::= CMD_ATTACH attachparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 39:
+          backtrace ::= CMD_BACKTRACE backtraceparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 40     backtrace ::= CMD_BACKTRACE backtraceparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 40:
+          backtrace ::= CMD_BACKTRACE * backtraceparams semicolon cmdexecute CMD_END_OF_FILE
+
+CMD_BACKTRACE_PARAM_FRAMECOUNT shift-reduce 41     backtraceparams ::= CMD_BACKTRACE_PARAM_FRAMECOUNT
+    CMD_BACKTRACE_PARAM_OTHERS shift-reduce 42     backtraceparams ::= CMD_BACKTRACE_PARAM_OTHERS
+               backtraceparams shift        64     
+                     {default} reduce       43     backtraceparams ::=
+
+State 41:
+          frame ::= CMD_FRAME frameparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 38     frame ::= CMD_FRAME frameparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 42:
+          continue ::= CMD_CONTINUE semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 37     continue ::= CMD_CONTINUE semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 43:
+          source ::= CMD_SOURCE sourceparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 35     source ::= CMD_SOURCE sourceparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 44:
+          tbreak ::= CMD_TBREAK tbreakparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 33     tbreak ::= CMD_TBREAK tbreakparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 45:
+          break ::= CMD_BREAK breakparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 30     break ::= CMD_BREAK breakparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 46:
+          delete ::= CMD_DELETE deleteparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 27     delete ::= CMD_DELETE deleteparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 47:
+          step ::= CMD_STEP semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 26     step ::= CMD_STEP semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 48:
+          finish ::= CMD_FINISH semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 25     finish ::= CMD_FINISH semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 49:
+          next ::= CMD_NEXT semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 24     next ::= CMD_NEXT semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 50:
+          dummy ::= CMD_DUMMY semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 23     dummy ::= CMD_DUMMY semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 51:
+          quit ::= CMD_QUIT semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 22     quit ::= CMD_QUIT semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 52:
+          whatis ::= CMD_WHATIS whatisparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 19     whatis ::= CMD_WHATIS whatisparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 53:
+          output ::= CMD_OUTPUT outputparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 16     output ::= CMD_OUTPUT outputparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 54:
+          set ::= CMD_SET setparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 6      set ::= CMD_SET setparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 55:
+          catch ::= CMD_CATCH catchparams semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 4      catch ::= CMD_CATCH catchparams semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 56:
+          clearallbreakpoints ::= CMD_CLEAR_ALL_BREAKPOINTS clearallbreakpointsparam semicolon cmdexecute * CMD_END_OF_FILE
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+               CMD_END_OF_FILE shift-reduce 1      clearallbreakpoints ::= CMD_CLEAR_ALL_BREAKPOINTS clearallbreakpointsparam semicolon cmdexecute CMD_END_OF_FILE
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+
+State 57:
+          exit ::= CMD_EXIT * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        3      
+                     {default} reduce       95     semicolon ::=
+
+State 58:
+          show ::= CMD_SHOW showparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        4      
+                     {default} reduce       95     semicolon ::=
+
+State 59:
+          info ::= CMD_INFO infoparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        5      
+                     {default} reduce       95     semicolon ::=
+
+State 60:
+          kill ::= CMD_KILL * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        6      
+                     {default} reduce       95     semicolon ::=
+
+State 61:
+          detach ::= CMD_DETACH * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        7      
+                     {default} reduce       95     semicolon ::=
+
+State 62:
+          attach ::= CMD_ATTACH attachparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        8      
+                     {default} reduce       95     semicolon ::=
+
+State 63:
+          attach ::= CMD_ATTACH * attachparams semicolon cmdexecute CMD_END_OF_FILE
+
+   CMD_ATTACH_PARAM_SESSION_ID shift-reduce 45     attachparams ::= CMD_ATTACH_PARAM_SESSION_ID
+                  attachparams shift        62     
+                     {default} reduce       46     attachparams ::=
+
+State 64:
+          backtrace ::= CMD_BACKTRACE backtraceparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        9      
+                     {default} reduce       95     semicolon ::=
+
+State 65:
+          frame ::= CMD_FRAME frameparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        10     
+                     {default} reduce       95     semicolon ::=
+
+State 66:
+          frame ::= CMD_FRAME * frameparams semicolon cmdexecute CMD_END_OF_FILE
+
+       CMD_FRAME_PARAM_FRAMENO shift-reduce 39     frameparams ::= CMD_FRAME_PARAM_FRAMENO
+                   frameparams shift        65     
+
+State 67:
+          continue ::= CMD_CONTINUE * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        11     
+                     {default} reduce       95     semicolon ::=
+
+State 68:
+          source ::= CMD_SOURCE sourceparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        12     
+                     {default} reduce       95     semicolon ::=
+
+State 69:
+          source ::= CMD_SOURCE * sourceparams semicolon cmdexecute CMD_END_OF_FILE
+
+ CMD_SOURCE_PARAM_FULLFILEPATH shift-reduce 36     sourceparams ::= CMD_SOURCE_PARAM_FULLFILEPATH
+                  sourceparams shift        68     
+
+State 70:
+          tbreakparams ::= tbreakdoublequote CMD_TBREAK_PARAM_FULLFILEPATH * tbreakdoublequote
+
+  CMD_TBREAK_PARAM_DOUBLEQUOTE shift-reduce 87     tbreakdoublequote ::= CMD_TBREAK_PARAM_DOUBLEQUOTE
+             tbreakdoublequote shift-reduce 34     tbreakparams ::= tbreakdoublequote CMD_TBREAK_PARAM_FULLFILEPATH tbreakdoublequote
+
+State 71:
+          tbreak ::= CMD_TBREAK tbreakparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        13     
+                     {default} reduce       95     semicolon ::=
+
+State 72:
+          breakparams ::= breakdoublequote CMD_BREAK_PARAM_FULLFILEPATH * breakdoublequote
+
+   CMD_BREAK_PARAM_DOUBLEQUOTE shift-reduce 32     breakdoublequote ::= CMD_BREAK_PARAM_DOUBLEQUOTE
+              breakdoublequote shift-reduce 31     breakparams ::= breakdoublequote CMD_BREAK_PARAM_FULLFILEPATH breakdoublequote
+
+State 73:
+          break ::= CMD_BREAK breakparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        15     
+                     {default} reduce       95     semicolon ::=
+
+State 74:
+          delete ::= CMD_DELETE deleteparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        17     
+                     {default} reduce       95     semicolon ::=
+
+State 75:
+          delete ::= CMD_DELETE * deleteparams semicolon cmdexecute CMD_END_OF_FILE
+
+  CMD_DELETE_PARAM_BREAKPOINTS shift        95     
+                  deleteparams shift        74     
+                     {default} reduce       29     deleteparams ::=
+
+State 76:
+          step ::= CMD_STEP * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        18     
+                     {default} reduce       95     semicolon ::=
+
+State 77:
+          finish ::= CMD_FINISH * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        19     
+                     {default} reduce       95     semicolon ::=
+
+State 78:
+          next ::= CMD_NEXT * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        20     
+                     {default} reduce       95     semicolon ::=
+
+State 79:
+          dummy ::= CMD_DUMMY * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        21     
+                     {default} reduce       95     semicolon ::=
+
+State 80:
+          quit ::= CMD_QUIT * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        22     
+                     {default} reduce       95     semicolon ::=
+
+State 81:
+          whatis ::= CMD_WHATIS whatisparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        23     
+                     {default} reduce       95     semicolon ::=
+
+State 82:
+          whatis ::= CMD_WHATIS * whatisparams semicolon cmdexecute CMD_END_OF_FILE
+
+      CMD_WHATIS_VARIABLE_NAME shift-reduce 20     whatisparams ::= CMD_WHATIS_VARIABLE_NAME
+                  whatisparams shift        81     
+                     {default} reduce       21     whatisparams ::=
+
+State 83:
+          output ::= CMD_OUTPUT outputparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        24     
+                     {default} reduce       95     semicolon ::=
+
+State 84:
+          output ::= CMD_OUTPUT * outputparams semicolon cmdexecute CMD_END_OF_FILE
+
+      CMD_OUTPUT_VARIABLE_NAME shift-reduce 17     outputparams ::= CMD_OUTPUT_VARIABLE_NAME
+                  outputparams shift        83     
+                     {default} reduce       18     outputparams ::=
+
+State 85:
+          set ::= CMD_SET setparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        25     
+                     {default} reduce       95     semicolon ::=
+
+State 86:
+          catch ::= CMD_CATCH catchparams * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        26     
+                     {default} reduce       95     semicolon ::=
+
+State 87:
+          catch ::= CMD_CATCH * catchparams semicolon cmdexecute CMD_END_OF_FILE
+
+               CMD_CATCH_THROW shift-reduce 5      catchparams ::= CMD_CATCH_THROW
+                   catchparams shift        86     
+
+State 88:
+          clearallbreakpointsparam ::= clearallbreakpointsparamdoublequote CMD_CLEARALLBREAKPOINT_PARAM_FULLFILEPATH * clearallbreakpointsparamdoublequote
+
+CMD_CLEARALLBREAKPOINT_PARAM_DOUBLEQUOTE shift-reduce 3      clearallbreakpointsparamdoublequote ::= CMD_CLEARALLBREAKPOINT_PARAM_DOUBLEQUOTE
+clearallbreakpointsparamdoublequote shift-reduce 2      clearallbreakpointsparam ::= clearallbreakpointsparamdoublequote CMD_CLEARALLBREAKPOINT_PARAM_FULLFILEPATH clearallbreakpointsparamdoublequote
+
+State 89:
+          clearallbreakpoints ::= CMD_CLEAR_ALL_BREAKPOINTS clearallbreakpointsparam * semicolon cmdexecute CMD_END_OF_FILE
+
+                CMD_SEMI_COLON shift-reduce 94     semicolon ::= CMD_SEMI_COLON
+                     semicolon shift        27     
+                     {default} reduce       95     semicolon ::=
+
+State 90:
+     (70) command ::= cmdexecute *
+          cmdexecute ::= cmdexecute * cmdexecutechar
+
+                   CMD_EXECUTE shift-reduce 93     cmdexecutechar ::= CMD_EXECUTE
+                   CMD_EXECUTE reduce       70      ** Parsing conflict **
+                cmdexecutechar shift-reduce 91     cmdexecute ::= cmdexecute cmdexecutechar
+                     {default} reduce       70     command ::= cmdexecute
+
+State 91:
+          setparams ::= CMD_SET_PRINT * CMD_SET_ASM_DEMANGLE CMD_SET_ON
+          setparams ::= CMD_SET_PRINT * CMD_SET_ELEMENTS CMD_SET_NUMERIC
+
+          CMD_SET_ASM_DEMANGLE shift        100    
+              CMD_SET_ELEMENTS shift        99     
+
+State 92:
+     (61) start ::= invalidcommands *
+
+                             $ reduce       61     start ::= invalidcommands
+
+State 93:
+          tbreakparams ::= tbreakdoublequote * CMD_TBREAK_PARAM_FULLFILEPATH tbreakdoublequote
+
+ CMD_TBREAK_PARAM_FULLFILEPATH shift        70     
+
+State 94:
+          breakparams ::= breakdoublequote * CMD_BREAK_PARAM_FULLFILEPATH breakdoublequote
+
+  CMD_BREAK_PARAM_FULLFILEPATH shift        72     
+
+State 95:
+          deleteparams ::= CMD_DELETE_PARAM_BREAKPOINTS * CMD_DELETE_PARAM_NUMERIC
+
+      CMD_DELETE_PARAM_NUMERIC shift-reduce 28     deleteparams ::= CMD_DELETE_PARAM_BREAKPOINTS CMD_DELETE_PARAM_NUMERIC
+
+State 96:
+          setparams ::= CMD_SET_PROMPT * CMD_SET_PROMPT_STRING
+
+         CMD_SET_PROMPT_STRING shift-reduce 15     setparams ::= CMD_SET_PROMPT CMD_SET_PROMPT_STRING
+
+State 97:
+          setparams ::= CMD_SET_DISASSEMBLY_FLAVOR * CMD_SET_ATT
+
+                   CMD_SET_ATT shift-reduce 14     setparams ::= CMD_SET_DISASSEMBLY_FLAVOR CMD_SET_ATT
+
+State 98:
+          setparams ::= CMD_SET_UNWINDONSIGNAL * CMD_SET_ON
+
+                    CMD_SET_ON shift-reduce 13     setparams ::= CMD_SET_UNWINDONSIGNAL CMD_SET_ON
+
+State 99:
+          setparams ::= CMD_SET_PRINT CMD_SET_ELEMENTS * CMD_SET_NUMERIC
+
+               CMD_SET_NUMERIC shift-reduce 12     setparams ::= CMD_SET_PRINT CMD_SET_ELEMENTS CMD_SET_NUMERIC
+
+State 100:
+          setparams ::= CMD_SET_PRINT CMD_SET_ASM_DEMANGLE * CMD_SET_ON
+
+                    CMD_SET_ON shift-reduce 11     setparams ::= CMD_SET_PRINT CMD_SET_ASM_DEMANGLE CMD_SET_ON
+
+State 101:
+          setparams ::= CMD_SET_BREAKPOINT CMD_SET_PENDING * CMD_SET_ON
+
+                    CMD_SET_ON shift-reduce 10     setparams ::= CMD_SET_BREAKPOINT CMD_SET_PENDING CMD_SET_ON
+
+State 102:
+          setparams ::= CMD_SET_BREAKPOINT * CMD_SET_PENDING CMD_SET_ON
+
+               CMD_SET_PENDING shift        101    
+
+State 103:
+          setparams ::= CMD_SET_HEIGHT * CMD_SET_NUMERIC
+
+               CMD_SET_NUMERIC shift-reduce 9      setparams ::= CMD_SET_HEIGHT CMD_SET_NUMERIC
+
+State 104:
+          setparams ::= CMD_SET_WIDTH * CMD_SET_NUMERIC
+
+               CMD_SET_NUMERIC shift-reduce 8      setparams ::= CMD_SET_WIDTH CMD_SET_NUMERIC
+
+State 105:
+          setparams ::= CMD_SET_CONFIRM * CMD_SET_OFF
+
+                   CMD_SET_OFF shift-reduce 7      setparams ::= CMD_SET_CONFIRM CMD_SET_OFF
+
+State 106:
+          clearallbreakpointsparam ::= clearallbreakpointsparamdoublequote * CMD_CLEARALLBREAKPOINT_PARAM_FULLFILEPATH clearallbreakpointsparamdoublequote
+
+CMD_CLEARALLBREAKPOINT_PARAM_FULLFILEPATH shift        88     
+
+----------------------------------------------------
+Symbols:
+    0: $:
+    1: CMD_CLEAR_ALL_BREAKPOINTS
+    2: CMD_END_OF_FILE
+    3: CMD_CLEARALLBREAKPOINT_PARAM_FULLFILEPATH
+    4: CMD_CLEARALLBREAKPOINT_PARAM_DOUBLEQUOTE
+    5: CMD_CATCH
+    6: CMD_CATCH_THROW
+    7: CMD_SET
+    8: CMD_SET_CONFIRM
+    9: CMD_SET_OFF
+   10: CMD_SET_WIDTH
+   11: CMD_SET_NUMERIC
+   12: CMD_SET_HEIGHT
+   13: CMD_SET_BREAKPOINT
+   14: CMD_SET_PENDING
+   15: CMD_SET_ON
+   16: CMD_SET_PRINT
+   17: CMD_SET_ASM_DEMANGLE
+   18: CMD_SET_ELEMENTS
+   19: CMD_SET_UNWINDONSIGNAL
+   20: CMD_SET_DISASSEMBLY_FLAVOR
+   21: CMD_SET_ATT
+   22: CMD_SET_PROMPT
+   23: CMD_SET_PROMPT_STRING
+   24: CMD_OUTPUT
+   25: CMD_OUTPUT_VARIABLE_NAME
+   26: CMD_WHATIS
+   27: CMD_WHATIS_VARIABLE_NAME
+   28: CMD_QUIT
+   29: CMD_DUMMY
+   30: CMD_NEXT
+   31: CMD_FINISH
+   32: CMD_STEP
+   33: CMD_DELETE
+   34: CMD_DELETE_PARAM_BREAKPOINTS
+   35: CMD_DELETE_PARAM_NUMERIC
+   36: CMD_BREAK
+   37: CMD_BREAK_PARAM_FULLFILEPATH
+   38: CMD_BREAK_PARAM_DOUBLEQUOTE
+   39: CMD_TBREAK
+   40: CMD_TBREAK_PARAM_FULLFILEPATH
+   41: CMD_TBREAK_PARAM_DOUBLEQUOTE
+   42: CMD_SOURCE
+   43: CMD_SOURCE_PARAM_FULLFILEPATH
+   44: CMD_CONTINUE
+   45: CMD_FRAME
+   46: CMD_FRAME_PARAM_FRAMENO
+   47: CMD_BACKTRACE
+   48: CMD_BACKTRACE_PARAM_FRAMECOUNT
+   49: CMD_BACKTRACE_PARAM_OTHERS
+   50: CMD_ATTACH
+   51: CMD_ATTACH_PARAM_SESSION_ID
+   52: CMD_DETACH
+   53: CMD_KILL
+   54: CMD_INFO
+   55: CMD_INFO_PARAM_LOCALS
+   56: CMD_INFO_PARAM_ARGS
+   57: CMD_INFO_PARAM_GLOBALS
+   58: CMD_INFO_PARAM_FRAME
+   59: CMD_SHOW
+   60: CMD_SHOW_PARAM_SESSION_COUNT
+   61: CMD_SHOW_PARAM_VERSION
+   62: CMD_EXIT
+   63: CMD_ANY_CHARACTER
+   64: CMD_EXECUTE
+   65: CMD_SEMI_COLON
+   66: error:
+   67: start: CMD_CLEAR_ALL_BREAKPOINTS CMD_CATCH CMD_SET CMD_OUTPUT CMD_WHATIS CMD_QUIT CMD_DUMMY CMD_NEXT CMD_FINISH CMD_STEP CMD_DELETE CMD_BREAK CMD_TBREAK CMD_SOURCE CMD_CONTINUE CMD_FRAME CMD_BACKTRACE CMD_ATTACH CMD_DETACH CMD_KILL CMD_INFO CMD_SHOW CMD_EXIT CMD_ANY_CHARACTER CMD_EXECUTE
+   68: validcommands: CMD_CLEAR_ALL_BREAKPOINTS CMD_CATCH CMD_SET CMD_OUTPUT CMD_WHATIS CMD_QUIT CMD_DUMMY CMD_NEXT CMD_FINISH CMD_STEP CMD_DELETE CMD_BREAK CMD_TBREAK CMD_SOURCE CMD_CONTINUE CMD_FRAME CMD_BACKTRACE CMD_ATTACH CMD_DETACH CMD_KILL CMD_INFO CMD_SHOW CMD_EXIT CMD_EXECUTE
+   69: invalidcommands: CMD_ANY_CHARACTER
+   70: command: CMD_CLEAR_ALL_BREAKPOINTS CMD_CATCH CMD_SET CMD_OUTPUT CMD_WHATIS CMD_QUIT CMD_DUMMY CMD_NEXT CMD_FINISH CMD_STEP CMD_DELETE CMD_BREAK CMD_TBREAK CMD_SOURCE CMD_CONTINUE CMD_FRAME CMD_BACKTRACE CMD_ATTACH CMD_DETACH CMD_KILL CMD_INFO CMD_SHOW CMD_EXIT CMD_EXECUTE
+   71: info: CMD_INFO
+   72: kill: CMD_KILL
+   73: exit: CMD_EXIT
+   74: quit: CMD_QUIT
+   75: show: CMD_SHOW
+   76: attach: CMD_ATTACH
+   77: detach: CMD_DETACH
+   78: cmdexecute: CMD_EXECUTE
+   79: backtrace: CMD_BACKTRACE
+   80: frame: CMD_FRAME
+   81: continue: CMD_CONTINUE
+   82: source: CMD_SOURCE
+   83: break: CMD_BREAK
+   84: tbreak: CMD_TBREAK
+   85: delete: CMD_DELETE
+   86: next: CMD_NEXT
+   87: step: CMD_STEP
+   88: finish: CMD_FINISH
+   89: dummy: CMD_DUMMY
+   90: whatis: CMD_WHATIS
+   91: output: CMD_OUTPUT
+   92: set: CMD_SET
+   93: catch: CMD_CATCH
+   94: clearallbreakpoints: CMD_CLEAR_ALL_BREAKPOINTS
+   95: clearallbreakpointsparam: CMD_CLEARALLBREAKPOINT_PARAM_DOUBLEQUOTE
+   96: semicolon: <lambda> CMD_SEMI_COLON
+   97: clearallbreakpointsparamdoublequote: CMD_CLEARALLBREAKPOINT_PARAM_DOUBLEQUOTE
+   98: catchparams: CMD_CATCH_THROW
+   99: setparams: CMD_SET_CONFIRM CMD_SET_WIDTH CMD_SET_HEIGHT CMD_SET_BREAKPOINT CMD_SET_PRINT CMD_SET_UNWINDONSIGNAL CMD_SET_DISASSEMBLY_FLAVOR CMD_SET_PROMPT
+  100: outputparams: <lambda> CMD_OUTPUT_VARIABLE_NAME
+  101: whatisparams: <lambda> CMD_WHATIS_VARIABLE_NAME
+  102: deleteparams: <lambda> CMD_DELETE_PARAM_BREAKPOINTS
+  103: breakparams: CMD_BREAK_PARAM_DOUBLEQUOTE
+  104: breakdoublequote: CMD_BREAK_PARAM_DOUBLEQUOTE
+  105: tbreakparams: CMD_TBREAK_PARAM_DOUBLEQUOTE
+  106: tbreakdoublequote: CMD_TBREAK_PARAM_DOUBLEQUOTE
+  107: sourceparams: CMD_SOURCE_PARAM_FULLFILEPATH
+  108: frameparams: CMD_FRAME_PARAM_FRAMENO
+  109: backtraceparams: <lambda> CMD_BACKTRACE_PARAM_FRAMECOUNT CMD_BACKTRACE_PARAM_OTHERS
+  110: attachparams: <lambda> CMD_ATTACH_PARAM_SESSION_ID
+  111: infoparams: CMD_INFO_PARAM_LOCALS CMD_INFO_PARAM_ARGS CMD_INFO_PARAM_GLOBALS CMD_INFO_PARAM_FRAME
+  112: showparams: CMD_SHOW_PARAM_SESSION_COUNT CMD_SHOW_PARAM_VERSION
+  113: invalidchars: CMD_ANY_CHARACTER
+  114: invalidchar: CMD_ANY_CHARACTER
+  115: cmdexecutechar: CMD_EXECUTE
