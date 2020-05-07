@@ -70,10 +70,12 @@
   </ImportGroup>
   <PropertyGroup Label="UserMacros" />
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
-    <IncludePath>$(SolutionDir)DBInt-Oracle;$(SolutionDir)DBInt-MySql;$(SolutionDir)DBInt;$(SolutionDir)DBInt-Postgresql;$(SolutionDir)SodiumShared;C:\Program Files\MySQL\include;$(SolutionDir)DBInt-Oracle\oclib\include;C:\Program Files\PostgreSQL\12\include;C:\Program Files\PostgreSQL\12\include\libpq;C:\Program Files\PostgreSQL\10\include;C:\Program Files\PostgreSQL\10\include\libpq;$(IncludePath)</IncludePath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <OutDir>$(ProjectDir)$(Platform)\</OutDir>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
-    <IncludePath>$(SolutionDir)DBInt-Oracle;$(SolutionDir)DBInt-MySql;$(SolutionDir)DBInt;$(SolutionDir)DBInt-Postgresql;$(SolutionDir)SodiumShared;C:\Program Files\MySQL\include;$(SolutionDir)DBInt-Oracle\oclib\include;C:\Program Files\PostgreSQL\12\include;C:\Program Files\PostgreSQL\12\include\libpq;C:\Program Files\PostgreSQL\10\include;C:\Program Files\PostgreSQL\10\include\libpq;$(IncludePath)</IncludePath>
+    <IncludePath>$(IncludePath)</IncludePath>
+    <OutDir>$(ProjectDir)$(Platform)\</OutDir>
   </PropertyGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -93,15 +95,16 @@
       <PreprocessorDefinitions>SodiumDebugger</PreprocessorDefinitions>
     </ClCompile>
     <PreBuildEvent>
-      <Command>$(SolutionDir)lemon -b lemon.commands.yy
-$(SolutionDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c"  lexer.commands.ll</Command>
+      <Command>$(ProjectDir)lemon -b lemon.commands.yy
+$(ProjectDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c"  lexer.commands.ll</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)$(Platform)\$(Configuration)\SodiumDebugger.exe C:\projects\Sodium\Setup</Command>
+      <Command>copy $(ProjectDir)$(Platform)\SodiumDebugger.exe C:\projects\Sodium\Setup</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>SodiumShared.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;..\SodiumShared\x64\Debug\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\SodiumShared\x64</AdditionalLibraryDirectories>
+      <DelayLoadDLLs>SodiumShared.dll</DelayLoadDLLs>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
@@ -131,15 +134,15 @@ $(SolutionDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c" 
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
       <AdditionalDependencies>SodiumShared.lib;%(AdditionalDependencies)</AdditionalDependencies>
-      <AdditionalLibraryDirectories>$(SolutionDir)$(Platform)\$(Configuration)\;..\SodiumShared\x64\Debug\</AdditionalLibraryDirectories>
+      <AdditionalLibraryDirectories>..\SodiumShared\x64</AdditionalLibraryDirectories>
       <DelayLoadDLLs>SodiumShared.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(SolutionDir)$(Platform)\$(Configuration)\SodiumDebugger.exe C:\projects\Sodium\Setup</Command>
+      <Command>copy $(ProjectDir)$(Platform)\SodiumDebugger.exe C:\projects\Sodium\Setup</Command>
     </PostBuildEvent>
     <PreBuildEvent>
-      <Command>$(SolutionDir)lemon -b lemon.commands.yy
-$(SolutionDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c"  lexer.commands.ll</Command>
+      <Command>$(ProjectDir)lemon -b lemon.commands.yy
+$(ProjectDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c"  lexer.commands.ll</Command>
     </PreBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
