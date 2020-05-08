@@ -892,15 +892,17 @@ static const flex_int16_t yy_chk[984] =
 #define YY_RESTORE_YY_MORE_OFFSET
 #line 1 "lexer.commands.ll"
 #line 2 "lexer.commands.ll"
+#include "pch.h"
+
 #include "lemon.commands.h"
-#line 896 "lexer.commands.c"
+#line 898 "lexer.commands.c"
 #define YY_NO_UNISTD_H 1
 #define YY_NO_INPUT 1
 
 /*	*****************************************************************
 	Custom Commands for VS Code Debugger Adaptor
 	****************************************************************/
-#line 903 "lexer.commands.c"
+#line 905 "lexer.commands.c"
 
 #define INITIAL 0
 #define SC_CMD_SHOW_PARAMETERS 1
@@ -1170,10 +1172,10 @@ YY_DECL
 		}
 
 	{
-#line 60 "lexer.commands.ll"
+#line 62 "lexer.commands.ll"
 
 
-#line 1176 "lexer.commands.c"
+#line 1178 "lexer.commands.c"
 
 	while ( /*CONSTCOND*/1 )		/* loops until end-of-file is reached */
 		{
@@ -1228,7 +1230,7 @@ do_action:	/* This label is used only to access EOF actions. */
 
 case 1:
 YY_RULE_SETUP
-#line 62 "lexer.commands.ll"
+#line 64 "lexer.commands.ll"
 {
 										return CMD_SEMI_COLON;
 									}
@@ -1236,14 +1238,14 @@ YY_RULE_SETUP
 case 2:
 /* rule 2 can match eol */
 YY_RULE_SETUP
-#line 65 "lexer.commands.ll"
+#line 67 "lexer.commands.ll"
 {
 										return CMD_EXECUTE;
 									}
 	YY_BREAK
 case 3:
 YY_RULE_SETUP
-#line 68 "lexer.commands.ll"
+#line 70 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_INFO_PARAMETERS);
 										return CMD_INFO;
@@ -1251,49 +1253,49 @@ YY_RULE_SETUP
 	YY_BREAK
 case 4:
 YY_RULE_SETUP
-#line 72 "lexer.commands.ll"
+#line 74 "lexer.commands.ll"
 {
 										return CMD_NEXT;
 									}
 	YY_BREAK
 case 5:
 YY_RULE_SETUP
-#line 75 "lexer.commands.ll"
+#line 77 "lexer.commands.ll"
 {
 										return CMD_DUMMY;
 									}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
-#line 78 "lexer.commands.ll"
+#line 80 "lexer.commands.ll"
 {
 										return CMD_EXIT;
 									}
 	YY_BREAK
 case 7:
 YY_RULE_SETUP
-#line 81 "lexer.commands.ll"
+#line 83 "lexer.commands.ll"
 {
 										return CMD_QUIT;
 									}
 	YY_BREAK
 case 8:
 YY_RULE_SETUP
-#line 84 "lexer.commands.ll"
+#line 86 "lexer.commands.ll"
 {
 										return CMD_STEP;
 									}
 	YY_BREAK
 case 9:
 YY_RULE_SETUP
-#line 87 "lexer.commands.ll"
+#line 89 "lexer.commands.ll"
 {
 										return CMD_FINISH;
 									}
 	YY_BREAK
 case 10:
 YY_RULE_SETUP
-#line 90 "lexer.commands.ll"
+#line 92 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_SET_PARAMETERS);
 										return CMD_SET;
@@ -1301,7 +1303,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 11:
 YY_RULE_SETUP
-#line 94 "lexer.commands.ll"
+#line 96 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_CATCH_PARAMETERS);
 										return CMD_CATCH;
@@ -1309,7 +1311,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 12:
 YY_RULE_SETUP
-#line 98 "lexer.commands.ll"
+#line 100 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_BREAK_PARAMETERS);
 										return CMD_BREAK;
@@ -1317,7 +1319,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 13:
 YY_RULE_SETUP
-#line 102 "lexer.commands.ll"
+#line 104 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_TBREAK_PARAMETERS);
 										return CMD_TBREAK;
@@ -1325,7 +1327,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 14:
 YY_RULE_SETUP
-#line 106 "lexer.commands.ll"
+#line 108 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_WHATIS_PARAMETERS);
 										return CMD_WHATIS;
@@ -1333,7 +1335,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 15:
 YY_RULE_SETUP
-#line 110 "lexer.commands.ll"
+#line 112 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_OUTPUT_PARAMETERS);
 										return CMD_OUTPUT;
@@ -1341,7 +1343,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 16:
 YY_RULE_SETUP
-#line 114 "lexer.commands.ll"
+#line 116 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_ATTACH_PARAMETERS);
 										return CMD_ATTACH;
@@ -1349,7 +1351,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 17:
 YY_RULE_SETUP
-#line 118 "lexer.commands.ll"
+#line 120 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_DELETE_PARAMETERS);
 										return CMD_DELETE;
@@ -1357,7 +1359,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 18:
 YY_RULE_SETUP
-#line 122 "lexer.commands.ll"
+#line 124 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_SOURCE_PARAMETERS);
 										return CMD_SOURCE;
@@ -1365,7 +1367,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 19:
 YY_RULE_SETUP
-#line 126 "lexer.commands.ll"
+#line 128 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_FRAME_PARAMETERS);
 										return CMD_FRAME;
@@ -1373,7 +1375,7 @@ YY_RULE_SETUP
 	YY_BREAK
 case 20:
 YY_RULE_SETUP
-#line 130 "lexer.commands.ll"
+#line 132 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_BACKTRACE_PARAMETERS);
 										return CMD_BACKTRACE;
@@ -1381,14 +1383,14 @@ YY_RULE_SETUP
 	YY_BREAK
 case 21:
 YY_RULE_SETUP
-#line 134 "lexer.commands.ll"
+#line 136 "lexer.commands.ll"
 {
 										return CMD_CONTINUE;
 									}
 	YY_BREAK
 case 22:
 YY_RULE_SETUP
-#line 137 "lexer.commands.ll"
+#line 139 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_CLEARALLBREAKPOINT_PARAMETERS);
 										return CMD_CLEAR_ALL_BREAKPOINTS;
@@ -1396,21 +1398,21 @@ YY_RULE_SETUP
 	YY_BREAK
 case 23:
 YY_RULE_SETUP
-#line 141 "lexer.commands.ll"
+#line 143 "lexer.commands.ll"
 {
 										return CMD_DETACH;
 									}
 	YY_BREAK
 case 24:
 YY_RULE_SETUP
-#line 144 "lexer.commands.ll"
+#line 146 "lexer.commands.ll"
 {
 										return CMD_KILL;
 									}
 	YY_BREAK
 case 25:
 YY_RULE_SETUP
-#line 147 "lexer.commands.ll"
+#line 149 "lexer.commands.ll"
 {
 										BEGIN(SC_CMD_SHOW_PARAMETERS);
 										return CMD_SHOW;
@@ -1431,14 +1433,14 @@ case YY_STATE_EOF(SC_CMD_WHATIS_PARAMETERS):
 case YY_STATE_EOF(SC_CMD_OUTPUT_PARAMETERS):
 case YY_STATE_EOF(SC_CMD_SET_PARAMETERS):
 case YY_STATE_EOF(SC_CMD_CATCH_PARAMETERS):
-#line 151 "lexer.commands.ll"
+#line 153 "lexer.commands.ll"
 {
 										return CMD_END_OF_FILE;
 									}
 	YY_BREAK
 case 26:
 YY_RULE_SETUP
-#line 154 "lexer.commands.ll"
+#line 156 "lexer.commands.ll"
 {
 										return CMD_ANY_CHARACTER;
 }
@@ -1446,21 +1448,21 @@ YY_RULE_SETUP
 
 case 27:
 YY_RULE_SETUP
-#line 159 "lexer.commands.ll"
+#line 161 "lexer.commands.ll"
 {
 										return CMD_DELETE_PARAM_BREAKPOINTS;
 									}
 	YY_BREAK
 case 28:
 YY_RULE_SETUP
-#line 162 "lexer.commands.ll"
+#line 164 "lexer.commands.ll"
 {
 										return CMD_DELETE_PARAM_NUMERIC;
 									}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
-#line 165 "lexer.commands.ll"
+#line 167 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1469,7 +1471,7 @@ YY_RULE_SETUP
 case 30:
 /* rule 30 can match eol */
 YY_RULE_SETUP
-#line 169 "lexer.commands.ll"
+#line 171 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1479,21 +1481,21 @@ YY_RULE_SETUP
 
 case 31:
 YY_RULE_SETUP
-#line 177 "lexer.commands.ll"
+#line 179 "lexer.commands.ll"
 {
 										return CMD_TBREAK_PARAM_FULLFILEPATH;
 									}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
-#line 180 "lexer.commands.ll"
+#line 182 "lexer.commands.ll"
 {
 										return CMD_TBREAK_PARAM_DOUBLEQUOTE;
 									}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
-#line 183 "lexer.commands.ll"
+#line 185 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1502,7 +1504,7 @@ YY_RULE_SETUP
 case 34:
 /* rule 34 can match eol */
 YY_RULE_SETUP
-#line 187 "lexer.commands.ll"
+#line 189 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1512,21 +1514,21 @@ YY_RULE_SETUP
 
 case 35:
 YY_RULE_SETUP
-#line 194 "lexer.commands.ll"
+#line 196 "lexer.commands.ll"
 {
 										return CMD_CLEARALLBREAKPOINT_PARAM_FULLFILEPATH;
 									}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
-#line 197 "lexer.commands.ll"
+#line 199 "lexer.commands.ll"
 {
 										return CMD_CLEARALLBREAKPOINT_PARAM_DOUBLEQUOTE;
 									}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
-#line 200 "lexer.commands.ll"
+#line 202 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1535,7 +1537,7 @@ YY_RULE_SETUP
 case 38:
 /* rule 38 can match eol */
 YY_RULE_SETUP
-#line 204 "lexer.commands.ll"
+#line 206 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1545,21 +1547,21 @@ YY_RULE_SETUP
 
 case 39:
 YY_RULE_SETUP
-#line 211 "lexer.commands.ll"
+#line 213 "lexer.commands.ll"
 {
 										return CMD_BREAK_PARAM_FULLFILEPATH;
 									}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
-#line 214 "lexer.commands.ll"
+#line 216 "lexer.commands.ll"
 {
 										return CMD_BREAK_PARAM_DOUBLEQUOTE;
 									}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
-#line 217 "lexer.commands.ll"
+#line 219 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1568,7 +1570,7 @@ YY_RULE_SETUP
 case 42:
 /* rule 42 can match eol */
 YY_RULE_SETUP
-#line 221 "lexer.commands.ll"
+#line 223 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1578,14 +1580,14 @@ YY_RULE_SETUP
 
 case 43:
 YY_RULE_SETUP
-#line 228 "lexer.commands.ll"
+#line 230 "lexer.commands.ll"
 {
 										return CMD_SOURCE_PARAM_FULLFILEPATH;
 									}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
-#line 231 "lexer.commands.ll"
+#line 233 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1594,7 +1596,7 @@ YY_RULE_SETUP
 case 45:
 /* rule 45 can match eol */
 YY_RULE_SETUP
-#line 235 "lexer.commands.ll"
+#line 237 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1604,14 +1606,14 @@ YY_RULE_SETUP
 
 case 46:
 YY_RULE_SETUP
-#line 242 "lexer.commands.ll"
+#line 244 "lexer.commands.ll"
 {
 										return CMD_FRAME_PARAM_FRAMENO;
 									}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
-#line 245 "lexer.commands.ll"
+#line 247 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1620,7 +1622,7 @@ YY_RULE_SETUP
 case 48:
 /* rule 48 can match eol */
 YY_RULE_SETUP
-#line 249 "lexer.commands.ll"
+#line 251 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1630,21 +1632,21 @@ YY_RULE_SETUP
 
 case 49:
 YY_RULE_SETUP
-#line 256 "lexer.commands.ll"
+#line 258 "lexer.commands.ll"
 {
 										return CMD_BACKTRACE_PARAM_FRAMECOUNT;
 									}
 	YY_BREAK
 case 50:
 YY_RULE_SETUP
-#line 259 "lexer.commands.ll"
+#line 261 "lexer.commands.ll"
 {
 										return CMD_BACKTRACE_PARAM_OTHERS;
 									}
 	YY_BREAK
 case 51:
 YY_RULE_SETUP
-#line 262 "lexer.commands.ll"
+#line 264 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1653,7 +1655,7 @@ YY_RULE_SETUP
 case 52:
 /* rule 52 can match eol */
 YY_RULE_SETUP
-#line 266 "lexer.commands.ll"
+#line 268 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1663,35 +1665,35 @@ YY_RULE_SETUP
 
 case 53:
 YY_RULE_SETUP
-#line 274 "lexer.commands.ll"
+#line 276 "lexer.commands.ll"
 {
 										return CMD_INFO_PARAM_LOCALS;
 									}
 	YY_BREAK
 case 54:
 YY_RULE_SETUP
-#line 277 "lexer.commands.ll"
+#line 279 "lexer.commands.ll"
 {
 										return CMD_INFO_PARAM_ARGS;
 									}
 	YY_BREAK
 case 55:
 YY_RULE_SETUP
-#line 280 "lexer.commands.ll"
+#line 282 "lexer.commands.ll"
 {
 										return CMD_INFO_PARAM_GLOBALS;
 									}
 	YY_BREAK
 case 56:
 YY_RULE_SETUP
-#line 283 "lexer.commands.ll"
+#line 285 "lexer.commands.ll"
 {
 										return CMD_INFO_PARAM_FRAME;
 									}
 	YY_BREAK
 case 57:
 YY_RULE_SETUP
-#line 286 "lexer.commands.ll"
+#line 288 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1700,7 +1702,7 @@ YY_RULE_SETUP
 case 58:
 /* rule 58 can match eol */
 YY_RULE_SETUP
-#line 290 "lexer.commands.ll"
+#line 292 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1710,14 +1712,14 @@ YY_RULE_SETUP
 
 case 59:
 YY_RULE_SETUP
-#line 299 "lexer.commands.ll"
+#line 301 "lexer.commands.ll"
 {
 										return CMD_CATCH_THROW;
 									}
 	YY_BREAK
 case 60:
 YY_RULE_SETUP
-#line 302 "lexer.commands.ll"
+#line 304 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1726,7 +1728,7 @@ YY_RULE_SETUP
 case 61:
 /* rule 61 can match eol */
 YY_RULE_SETUP
-#line 306 "lexer.commands.ll"
+#line 308 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1736,119 +1738,119 @@ YY_RULE_SETUP
 
 case 62:
 YY_RULE_SETUP
-#line 313 "lexer.commands.ll"
+#line 315 "lexer.commands.ll"
 {
 										return CMD_SET_CONFIRM;
 									}
 	YY_BREAK
 case 63:
 YY_RULE_SETUP
-#line 316 "lexer.commands.ll"
+#line 318 "lexer.commands.ll"
 {
 										return CMD_SET_BREAKPOINT;
 									}
 	YY_BREAK
 case 64:
 YY_RULE_SETUP
-#line 319 "lexer.commands.ll"
+#line 321 "lexer.commands.ll"
 {
 										return CMD_SET_PENDING;
 									}
 	YY_BREAK
 case 65:
 YY_RULE_SETUP
-#line 322 "lexer.commands.ll"
+#line 324 "lexer.commands.ll"
 {
 										return CMD_SET_PRINT;
 									}
 	YY_BREAK
 case 66:
 YY_RULE_SETUP
-#line 325 "lexer.commands.ll"
+#line 327 "lexer.commands.ll"
 {
 										return CMD_SET_ELEMENTS;
 									}
 	YY_BREAK
 case 67:
 YY_RULE_SETUP
-#line 328 "lexer.commands.ll"
+#line 330 "lexer.commands.ll"
 {
 										return CMD_SET_ASM_DEMANGLE;
 									}
 	YY_BREAK
 case 68:
 YY_RULE_SETUP
-#line 331 "lexer.commands.ll"
+#line 333 "lexer.commands.ll"
 {
 										return CMD_SET_UNWINDONSIGNAL;
 									}
 	YY_BREAK
 case 69:
 YY_RULE_SETUP
-#line 334 "lexer.commands.ll"
+#line 336 "lexer.commands.ll"
 {
 										return CMD_SET_DISASSEMBLY_FLAVOR;
 									}
 	YY_BREAK
 case 70:
 YY_RULE_SETUP
-#line 337 "lexer.commands.ll"
+#line 339 "lexer.commands.ll"
 {
 										return CMD_SET_ATT;
 									}
 	YY_BREAK
 case 71:
 YY_RULE_SETUP
-#line 340 "lexer.commands.ll"
+#line 342 "lexer.commands.ll"
 {
 										return CMD_SET_ON;
 									}
 	YY_BREAK
 case 72:
 YY_RULE_SETUP
-#line 343 "lexer.commands.ll"
+#line 345 "lexer.commands.ll"
 {
 										return CMD_SET_OFF;
 									}
 	YY_BREAK
 case 73:
 YY_RULE_SETUP
-#line 346 "lexer.commands.ll"
+#line 348 "lexer.commands.ll"
 {
 										return CMD_SET_WIDTH;
 									}
 	YY_BREAK
 case 74:
 YY_RULE_SETUP
-#line 349 "lexer.commands.ll"
+#line 351 "lexer.commands.ll"
 {
 										return CMD_SET_HEIGHT;
 									}
 	YY_BREAK
 case 75:
 YY_RULE_SETUP
-#line 352 "lexer.commands.ll"
+#line 354 "lexer.commands.ll"
 {
 										return CMD_SET_PROMPT;
 									}
 	YY_BREAK
 case 76:
 YY_RULE_SETUP
-#line 355 "lexer.commands.ll"
+#line 357 "lexer.commands.ll"
 {
 										return CMD_SET_NUMERIC;
 									}
 	YY_BREAK
 case 77:
 YY_RULE_SETUP
-#line 358 "lexer.commands.ll"
+#line 360 "lexer.commands.ll"
 {
 										return CMD_SET_PROMPT_STRING;
 									}
 	YY_BREAK
 case 78:
 YY_RULE_SETUP
-#line 361 "lexer.commands.ll"
+#line 363 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1857,7 +1859,7 @@ YY_RULE_SETUP
 case 79:
 /* rule 79 can match eol */
 YY_RULE_SETUP
-#line 365 "lexer.commands.ll"
+#line 367 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1867,14 +1869,14 @@ YY_RULE_SETUP
 
 case 80:
 YY_RULE_SETUP
-#line 372 "lexer.commands.ll"
+#line 374 "lexer.commands.ll"
 {
 										return CMD_OUTPUT_VARIABLE_NAME;
 									}
 	YY_BREAK
 case 81:
 YY_RULE_SETUP
-#line 375 "lexer.commands.ll"
+#line 377 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1883,7 +1885,7 @@ YY_RULE_SETUP
 case 82:
 /* rule 82 can match eol */
 YY_RULE_SETUP
-#line 379 "lexer.commands.ll"
+#line 381 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1893,14 +1895,14 @@ YY_RULE_SETUP
 
 case 83:
 YY_RULE_SETUP
-#line 386 "lexer.commands.ll"
+#line 388 "lexer.commands.ll"
 {
 										return CMD_WHATIS_VARIABLE_NAME;
 									}
 	YY_BREAK
 case 84:
 YY_RULE_SETUP
-#line 389 "lexer.commands.ll"
+#line 391 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1909,7 +1911,7 @@ YY_RULE_SETUP
 case 85:
 /* rule 85 can match eol */
 YY_RULE_SETUP
-#line 393 "lexer.commands.ll"
+#line 395 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1919,14 +1921,14 @@ YY_RULE_SETUP
 
 case 86:
 YY_RULE_SETUP
-#line 400 "lexer.commands.ll"
+#line 402 "lexer.commands.ll"
 {
 										return CMD_ATTACH_PARAM_SESSION_ID;
 									}
 	YY_BREAK
 case 87:
 YY_RULE_SETUP
-#line 403 "lexer.commands.ll"
+#line 405 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1935,7 +1937,7 @@ YY_RULE_SETUP
 case 88:
 /* rule 88 can match eol */
 YY_RULE_SETUP
-#line 407 "lexer.commands.ll"
+#line 409 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1945,21 +1947,21 @@ YY_RULE_SETUP
 
 case 89:
 YY_RULE_SETUP
-#line 414 "lexer.commands.ll"
+#line 416 "lexer.commands.ll"
 {
 										return CMD_SHOW_PARAM_SESSION_COUNT;
 									}
 	YY_BREAK
 case 90:
 YY_RULE_SETUP
-#line 417 "lexer.commands.ll"
+#line 419 "lexer.commands.ll"
 {
 										return CMD_SHOW_PARAM_VERSION;
 									}
 	YY_BREAK
 case 91:
 YY_RULE_SETUP
-#line 420 "lexer.commands.ll"
+#line 422 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_SEMI_COLON;
@@ -1968,7 +1970,7 @@ YY_RULE_SETUP
 case 92:
 /* rule 92 can match eol */
 YY_RULE_SETUP
-#line 424 "lexer.commands.ll"
+#line 426 "lexer.commands.ll"
 {
 										BEGIN(INITIAL);
 										return CMD_EXECUTE;
@@ -1977,10 +1979,10 @@ YY_RULE_SETUP
 
 case 93:
 YY_RULE_SETUP
-#line 430 "lexer.commands.ll"
+#line 432 "lexer.commands.ll"
 ECHO;
 	YY_BREAK
-#line 1983 "lexer.commands.c"
+#line 1985 "lexer.commands.c"
 
 	case YY_END_OF_BUFFER:
 		{
@@ -3106,7 +3108,7 @@ void cmdfree (void * ptr , yyscan_t yyscanner)
 
 #define YYTABLES_NAME "yytables"
 
-#line 430 "lexer.commands.ll"
+#line 432 "lexer.commands.ll"
 
 
 

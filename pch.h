@@ -18,7 +18,6 @@
 
 // INCLUDEs from htsql.dll project
 #include "..\SodiumExtension\mkDataStructures.h"
-#include "..\SodiumExtension\htsql.h"
 #include "..\SodiumExtension\mkSessionDataStructures.h"
 #include "..\SodiumExtension\mkConstants.h"
 #include "..\SodiumExtension\serverCommands.h"

@@ -19,7 +19,7 @@ void				commandParseFree(void *p, void(*freeProc)(void*) );
 int					cmdlex(yyscan_t yyscanner);
 char				*cmdget_text(yyscan_t yyscanner);
 int					cmdget_leng(yyscan_t yyscanner);
-int					cmdlex_init_extra(TokenCommand * yy_user_defined, yyscan_t* ptr_yy_globals);
+//int					cmdlex_init_extra(TokenCommand * yy_user_defined, yyscan_t* ptr_yy_globals);
 YY_BUFFER_STATE		cmd_scan_string(const char * yystr, yyscan_t yyscanner);
 void				cmdset_out(FILE *  _out_str, yyscan_t yyscanner);
 void				commandParse(void *yyp, int yymajor, TokenCommand yyminor, TokenCommand *Command);

@@ -1,4 +1,6 @@
 %{
+#include "pch.h"
+
 #include "lemon.commands.h"
 %}
 

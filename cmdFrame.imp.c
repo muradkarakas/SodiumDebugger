@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 
 #include "cmdFrame.imp.h"
 #include "cmdBacktrace.imp.h"

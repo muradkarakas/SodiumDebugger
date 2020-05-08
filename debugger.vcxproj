@@ -93,6 +93,7 @@
       <PrecompiledHeader>Use</PrecompiledHeader>
       <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
       <PreprocessorDefinitions>SodiumDebugger</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <PreBuildEvent>
       <Command>$(ProjectDir)lemon -b lemon.commands.yy
@@ -129,6 +130,7 @@ $(ProjectDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c"  
       <SDLCheck>true</SDLCheck>
       <PrecompiledHeader>Use</PrecompiledHeader>
       <PreprocessorDefinitions>SodiumDebugger</PreprocessorDefinitions>
+      <PrecompiledHeaderFile>pch.h</PrecompiledHeaderFile>
     </ClCompile>
     <Link>
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
@@ -196,6 +198,10 @@ $(ProjectDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c"  
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="pch.c">
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
+      <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
+    </ClCompile>
     <ClCompile Include="workerProcessThread.c" />
   </ItemGroup>
   <ItemGroup>
@@ -239,7 +245,7 @@ $(ProjectDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c"  
     <ClInclude Include="globals.h" />
     <ClInclude Include="lemon.commands.h" />
     <ClInclude Include="main.h" />
-    <ClInclude Include="stdafx.h" />
+    <ClInclude Include="pch.h" />
     <ClInclude Include="workerProcessThread.h" />
   </ItemGroup>
   <ItemGroup>

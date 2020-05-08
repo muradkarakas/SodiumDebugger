@@ -213,9 +213,6 @@
     <ClInclude Include="cmdQuit.imp.h">
       <Filter>Source Files\commands\commands\quit</Filter>
     </ClInclude>
-    <ClInclude Include="stdafx.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="globals.h">
       <Filter>Header Files</Filter>
     </ClInclude>
@@ -254,6 +251,9 @@
     </ClInclude>
     <ClInclude Include="cmdClearAllBreakPoints.h">
       <Filter>Source Files\commands\commands\clearallbreakpoints</Filter>
+    </ClInclude>
+    <ClInclude Include="pch.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -382,6 +382,9 @@
     </ClCompile>
     <ClCompile Include="cmdInfo.Globals.imp.c">
       <Filter>Source Files\commands\commands\info\globals</Filter>
+    </ClCompile>
+    <ClCompile Include="pch.c">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>

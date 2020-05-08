@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "pch.h"
 
 #include "cmdOutput.imp.h"
 #include "cmdInfoUtils.h"
