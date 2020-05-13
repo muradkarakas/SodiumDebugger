@@ -100,7 +100,7 @@
 $(ProjectDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c"  lexer.commands.ll</Command>
     </PreBuildEvent>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)$(Platform)\SodiumDebugger.exe C:\projects\Sodium\Setup</Command>
+      <Command>copy $(ProjectDir)$(Platform)\SodiumDebugger.exe C:\Sodium\Sodium-Setup</Command>
     </PostBuildEvent>
     <Link>
       <AdditionalDependencies>SodiumShared.lib;%(AdditionalDependencies)</AdditionalDependencies>
@@ -140,7 +140,7 @@ $(ProjectDir)win_flex_bison-latest\win_flex -Pcmd --outfile="lexer.commands.c"  
       <DelayLoadDLLs>SodiumShared.dll</DelayLoadDLLs>
     </Link>
     <PostBuildEvent>
-      <Command>copy $(ProjectDir)$(Platform)\SodiumDebugger.exe C:\projects\Sodium\Setup</Command>
+      <Command>copy $(ProjectDir)$(Platform)\SodiumDebugger.exe C:\Sodium\Sodium-Setup</Command>
     </PostBuildEvent>
     <PreBuildEvent>
       <Command>$(ProjectDir)lemon -b lemon.commands.yy
