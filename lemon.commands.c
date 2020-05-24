@@ -26,6 +26,20 @@
 /************ Begin %include sections from the grammar ************************/
 #line 2 "lemon.commands.yy"
  
+/**
+  * This file is part of Sodium Language project
+  *
+  * Copyright © 2020 Murad Karakaþ <muradkarakas@gmail.com>
+  *
+  * This program is free software; you can redistribute it and/or
+  * modify it under the terms of the GNU General Public License v3.0
+  * as published by the Free Software Foundation; either
+  * version 3 of the License, or (at your option) any later version.
+  *
+  *	https://choosealicense.com/licenses/gpl-3.0/
+  */
+
+
 #include "pch.h"
 
 #include <stdio.h>
@@ -39,7 +53,7 @@
 #include "consoleThread.h"
 #include "consoleLoger.h"
 #include "lemon.commands.h"
-#line 43 "lemon.commands.c"
+#line 57 "lemon.commands.c"
 /**************** End of %include directives **********************************/
 /* These constants specify the various numeric values for terminal symbols
 ** in a format understandable to "makeheaders".  This section is blank unless
@@ -1049,7 +1063,7 @@ static void yy_reduce(
   */
 /********** Begin reduce actions **********************************************/
       case 0: /* validcommands ::= command */
-#line 39 "lemon.commands.yy"
+#line 53 "lemon.commands.yy"
 {
 	BOOL success = cmdImp(Command); 
 	if (success) {
@@ -1057,231 +1071,231 @@ static void yy_reduce(
 		//DLOG("\nDone\n\n", NULL);
 	}
 }
-#line 1061 "lemon.commands.c"
+#line 1075 "lemon.commands.c"
         break;
       case 1: /* clearallbreakpoints ::= CMD_CLEAR_ALL_BREAKPOINTS clearallbreakpointsparam semicolon cmdexecute CMD_END_OF_FILE */
-#line 80 "lemon.commands.yy"
+#line 94 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_CLEAR_ALL_BREAKPOINTS;
 }
-#line 1068 "lemon.commands.c"
+#line 1082 "lemon.commands.c"
         break;
       case 2: /* clearallbreakpointsparam ::= clearallbreakpointsparamdoublequote CMD_CLEARALLBREAKPOINT_PARAM_FULLFILEPATH clearallbreakpointsparamdoublequote */
-#line 84 "lemon.commands.yy"
+#line 98 "lemon.commands.yy"
 {
 	char* fullFilePath = yymsp[-1].minor.yy0.tokenStr;
 	strncpy_s(Command->params->p.clearallbreakpoint_cmd_params.fullFilePath, MAX_PATH, fullFilePath, yymsp[-1].minor.yy0.tokenStrLength);
 }
-#line 1076 "lemon.commands.c"
+#line 1090 "lemon.commands.c"
         break;
       case 3: /* clearallbreakpointsparamdoublequote ::= CMD_CLEARALLBREAKPOINT_PARAM_DOUBLEQUOTE */
-#line 89 "lemon.commands.yy"
+#line 103 "lemon.commands.yy"
 {
 
 }
-#line 1083 "lemon.commands.c"
+#line 1097 "lemon.commands.c"
         break;
       case 4: /* catch ::= CMD_CATCH catchparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 97 "lemon.commands.yy"
+#line 111 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_CATCH;
 }
-#line 1090 "lemon.commands.c"
+#line 1104 "lemon.commands.c"
         break;
       case 5: /* catchparams ::= CMD_CATCH_THROW */
-#line 101 "lemon.commands.yy"
+#line 115 "lemon.commands.yy"
 {
 	Command->params->p.catch_cmd_params.throw = TRUE;
 }
-#line 1097 "lemon.commands.c"
+#line 1111 "lemon.commands.c"
         break;
       case 6: /* set ::= CMD_SET setparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 110 "lemon.commands.yy"
+#line 124 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_SET;
 }
-#line 1104 "lemon.commands.c"
+#line 1118 "lemon.commands.c"
         break;
       case 7: /* setparams ::= CMD_SET_CONFIRM CMD_SET_OFF */
-#line 114 "lemon.commands.yy"
+#line 128 "lemon.commands.yy"
 {
 	Command->params->p.set_cmd_params.confirm_off = TRUE;
 }
-#line 1111 "lemon.commands.c"
+#line 1125 "lemon.commands.c"
         break;
       case 8: /* setparams ::= CMD_SET_WIDTH CMD_SET_NUMERIC */
-#line 118 "lemon.commands.yy"
+#line 132 "lemon.commands.yy"
 {
 	char *width = yymsp[0].minor.yy0.tokenStr;
 	Command->params->p.set_cmd_params.width = atoi(width);
 }
-#line 1119 "lemon.commands.c"
+#line 1133 "lemon.commands.c"
         break;
       case 9: /* setparams ::= CMD_SET_HEIGHT CMD_SET_NUMERIC */
-#line 123 "lemon.commands.yy"
+#line 137 "lemon.commands.yy"
 {
 	char *height = yymsp[0].minor.yy0.tokenStr;
 	Command->params->p.set_cmd_params.width = atoi(height);
 }
-#line 1127 "lemon.commands.c"
+#line 1141 "lemon.commands.c"
         break;
       case 10: /* setparams ::= CMD_SET_BREAKPOINT CMD_SET_PENDING CMD_SET_ON */
-#line 128 "lemon.commands.yy"
+#line 142 "lemon.commands.yy"
 {
 	Command->params->p.set_cmd_params.breakpoint_pending_on = TRUE;
 }
-#line 1134 "lemon.commands.c"
+#line 1148 "lemon.commands.c"
         break;
       case 11: /* setparams ::= CMD_SET_PRINT CMD_SET_ASM_DEMANGLE CMD_SET_ON */
-#line 132 "lemon.commands.yy"
+#line 146 "lemon.commands.yy"
 {
 	Command->params->p.set_cmd_params.print_asm_demangle_on = TRUE;
 }
-#line 1141 "lemon.commands.c"
+#line 1155 "lemon.commands.c"
         break;
       case 12: /* setparams ::= CMD_SET_PRINT CMD_SET_ELEMENTS CMD_SET_NUMERIC */
-#line 136 "lemon.commands.yy"
+#line 150 "lemon.commands.yy"
 {
 	char *element = yymsp[0].minor.yy0.tokenStr;
 	Command->params->p.set_cmd_params.print_element = atoi(element);
 }
-#line 1149 "lemon.commands.c"
+#line 1163 "lemon.commands.c"
         break;
       case 13: /* setparams ::= CMD_SET_UNWINDONSIGNAL CMD_SET_ON */
-#line 141 "lemon.commands.yy"
+#line 155 "lemon.commands.yy"
 {
 	Command->params->p.set_cmd_params.unwindonsignal_on = TRUE;
 }
-#line 1156 "lemon.commands.c"
+#line 1170 "lemon.commands.c"
         break;
       case 14: /* setparams ::= CMD_SET_DISASSEMBLY_FLAVOR CMD_SET_ATT */
-#line 145 "lemon.commands.yy"
+#line 159 "lemon.commands.yy"
 {
 	Command->params->p.set_cmd_params.disassembly_flavor_att = TRUE;
 }
-#line 1163 "lemon.commands.c"
+#line 1177 "lemon.commands.c"
         break;
       case 15: /* setparams ::= CMD_SET_PROMPT CMD_SET_PROMPT_STRING */
-#line 149 "lemon.commands.yy"
+#line 163 "lemon.commands.yy"
 {
 	char *prompt = yymsp[0].minor.yy0.tokenStr;
 	strcpy_s(Command->params->p.set_cmd_params.prompt, MAX_PROMPT_LENGTH, prompt);
 }
-#line 1171 "lemon.commands.c"
+#line 1185 "lemon.commands.c"
         break;
       case 16: /* output ::= CMD_OUTPUT outputparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 159 "lemon.commands.yy"
+#line 173 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_OUTPUT;
 }
-#line 1178 "lemon.commands.c"
+#line 1192 "lemon.commands.c"
         break;
       case 17: /* outputparams ::= CMD_OUTPUT_VARIABLE_NAME */
-#line 163 "lemon.commands.yy"
+#line 177 "lemon.commands.yy"
 {
 	char *variableName = yymsp[0].minor.yy0.tokenStr;
 	strncpy_s(Command->params->p.output_cmd_params.variableName, MAX_VARIABLE_NAME_LENGTH, variableName, MAX_VARIABLE_NAME_LENGTH);
 	Command->params->p.output_cmd_params.variableName[MAX_VARIABLE_NAME_LENGTH] = '\0';
 }
-#line 1187 "lemon.commands.c"
+#line 1201 "lemon.commands.c"
         break;
       case 18: /* outputparams ::= */
-#line 169 "lemon.commands.yy"
+#line 183 "lemon.commands.yy"
 {
 	Command->params->p.output_cmd_params.variableName[0] = '\0';
 }
-#line 1194 "lemon.commands.c"
+#line 1208 "lemon.commands.c"
         break;
       case 19: /* whatis ::= CMD_WHATIS whatisparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 177 "lemon.commands.yy"
+#line 191 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_WHATIS;
 }
-#line 1201 "lemon.commands.c"
+#line 1215 "lemon.commands.c"
         break;
       case 20: /* whatisparams ::= CMD_WHATIS_VARIABLE_NAME */
-#line 181 "lemon.commands.yy"
+#line 195 "lemon.commands.yy"
 {
 	char *variableName = yymsp[0].minor.yy0.tokenStr;
 	strncpy_s(Command->params->p.whatis_cmd_params.variableName, MAX_VARIABLE_NAME_LENGTH, variableName, MAX_VARIABLE_NAME_LENGTH);
 	Command->params->p.whatis_cmd_params.variableName[MAX_VARIABLE_NAME_LENGTH] = '\0';
 }
-#line 1210 "lemon.commands.c"
+#line 1224 "lemon.commands.c"
         break;
       case 21: /* whatisparams ::= */
-#line 187 "lemon.commands.yy"
+#line 201 "lemon.commands.yy"
 {
 	Command->params->p.whatis_cmd_params.variableName[0] = '\0';
 }
-#line 1217 "lemon.commands.c"
+#line 1231 "lemon.commands.c"
         break;
       case 22: /* quit ::= CMD_QUIT semicolon cmdexecute CMD_END_OF_FILE */
-#line 195 "lemon.commands.yy"
+#line 209 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_QUIT;
 }
-#line 1224 "lemon.commands.c"
+#line 1238 "lemon.commands.c"
         break;
       case 23: /* dummy ::= CMD_DUMMY semicolon cmdexecute CMD_END_OF_FILE */
-#line 203 "lemon.commands.yy"
+#line 217 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_DUMMY;
 }
-#line 1231 "lemon.commands.c"
+#line 1245 "lemon.commands.c"
         break;
       case 24: /* next ::= CMD_NEXT semicolon cmdexecute CMD_END_OF_FILE */
-#line 211 "lemon.commands.yy"
+#line 225 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_NEXT;
 }
-#line 1238 "lemon.commands.c"
+#line 1252 "lemon.commands.c"
         break;
       case 25: /* finish ::= CMD_FINISH semicolon cmdexecute CMD_END_OF_FILE */
-#line 219 "lemon.commands.yy"
+#line 233 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_FINISH;
 }
-#line 1245 "lemon.commands.c"
+#line 1259 "lemon.commands.c"
         break;
       case 26: /* step ::= CMD_STEP semicolon cmdexecute CMD_END_OF_FILE */
-#line 228 "lemon.commands.yy"
+#line 242 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_STEP;
 }
-#line 1252 "lemon.commands.c"
+#line 1266 "lemon.commands.c"
         break;
       case 27: /* delete ::= CMD_DELETE deleteparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 236 "lemon.commands.yy"
+#line 250 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_DELETE;
 }
-#line 1259 "lemon.commands.c"
+#line 1273 "lemon.commands.c"
         break;
       case 28: /* deleteparams ::= CMD_DELETE_PARAM_BREAKPOINTS CMD_DELETE_PARAM_NUMERIC */
-#line 240 "lemon.commands.yy"
+#line 254 "lemon.commands.yy"
 {
 	char *breakpointID = yymsp[0].minor.yy0.tokenStr;
 	Command->params->p.delete_cmd_params.paramType = CMD_DELETE_PARAM_TYPE_BREAKPOINTS;
 	Command->params->p.delete_cmd_params.breakpointID = atoi(breakpointID);
 }
-#line 1268 "lemon.commands.c"
+#line 1282 "lemon.commands.c"
         break;
       case 29: /* deleteparams ::= */
-#line 246 "lemon.commands.yy"
+#line 260 "lemon.commands.yy"
 {
 	Command->params->p.delete_cmd_params.paramType = CMD_DELETE_PARAM_TYPE_NOTSET;
 }
-#line 1275 "lemon.commands.c"
+#line 1289 "lemon.commands.c"
         break;
       case 30: /* break ::= CMD_BREAK breakparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 254 "lemon.commands.yy"
+#line 268 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_BREAK;
 }
-#line 1282 "lemon.commands.c"
+#line 1296 "lemon.commands.c"
         break;
       case 31: /* breakparams ::= breakdoublequote CMD_BREAK_PARAM_FULLFILEPATH breakdoublequote */
-#line 258 "lemon.commands.yy"
+#line 272 "lemon.commands.yy"
 {	
 	char *fullFilePath = yymsp[-1].minor.yy0.tokenStr;
 
@@ -1294,25 +1308,25 @@ static void yy_reduce(
 	//Command->params->p.break_cmd_params.fullFilePath[SESSION_ID_LENGTH] = '\0';
 	Command->params->p.break_cmd_params.lineNumber = atoi(colonPos);
 }
-#line 1298 "lemon.commands.c"
+#line 1312 "lemon.commands.c"
         break;
       case 32: /* breakdoublequote ::= CMD_BREAK_PARAM_DOUBLEQUOTE */
-#line 271 "lemon.commands.yy"
+#line 285 "lemon.commands.yy"
 {
 	int test = 1;
 	int a  = test * 2;
 }
-#line 1306 "lemon.commands.c"
+#line 1320 "lemon.commands.c"
         break;
       case 33: /* tbreak ::= CMD_TBREAK tbreakparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 281 "lemon.commands.yy"
+#line 295 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_TBREAK;
 }
-#line 1313 "lemon.commands.c"
+#line 1327 "lemon.commands.c"
         break;
       case 34: /* tbreakparams ::= tbreakdoublequote CMD_TBREAK_PARAM_FULLFILEPATH tbreakdoublequote */
-#line 285 "lemon.commands.yy"
+#line 299 "lemon.commands.yy"
 {	
 	char *fullFilePath = yymsp[-1].minor.yy0.tokenStr;
 
@@ -1324,190 +1338,190 @@ static void yy_reduce(
 	strncpy_s(Command->params->p.tbreak_cmd_params.fullFilePath, MAX_PATH, fullFilePath, yymsp[-1].minor.yy0.tokenStrLength);
 	Command->params->p.tbreak_cmd_params.lineNumber = atoi(colonPos);
 }
-#line 1328 "lemon.commands.c"
+#line 1342 "lemon.commands.c"
         break;
       case 35: /* source ::= CMD_SOURCE sourceparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 303 "lemon.commands.yy"
+#line 317 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_SOURCE;
 }
-#line 1335 "lemon.commands.c"
+#line 1349 "lemon.commands.c"
         break;
       case 36: /* sourceparams ::= CMD_SOURCE_PARAM_FULLFILEPATH */
-#line 307 "lemon.commands.yy"
+#line 321 "lemon.commands.yy"
 {	
 	char *fullFilePath = yymsp[0].minor.yy0.tokenStr;
 	strncpy_s(Command->params->p.source_cmd_params.fullFilePath, MAX_PATH, fullFilePath, yymsp[0].minor.yy0.tokenStrLength);
 	Command->params->p.source_cmd_params.fullFilePath[SESSION_ID_LENGTH] = '\0';
 }
-#line 1344 "lemon.commands.c"
+#line 1358 "lemon.commands.c"
         break;
       case 37: /* continue ::= CMD_CONTINUE semicolon cmdexecute CMD_END_OF_FILE */
-#line 318 "lemon.commands.yy"
+#line 332 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_CONTINUE;
 }
-#line 1351 "lemon.commands.c"
+#line 1365 "lemon.commands.c"
         break;
       case 38: /* frame ::= CMD_FRAME frameparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 326 "lemon.commands.yy"
+#line 340 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_FRAME;
 }
-#line 1358 "lemon.commands.c"
+#line 1372 "lemon.commands.c"
         break;
       case 39: /* frameparams ::= CMD_FRAME_PARAM_FRAMENO */
-#line 330 "lemon.commands.yy"
+#line 344 "lemon.commands.yy"
 {	
 	Command->params->p.frame_cmd_params.frameNo = atoi(yymsp[0].minor.yy0.tokenStr);
 }
-#line 1365 "lemon.commands.c"
+#line 1379 "lemon.commands.c"
         break;
       case 40: /* backtrace ::= CMD_BACKTRACE backtraceparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 338 "lemon.commands.yy"
+#line 352 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_BACKTRACE;
 }
-#line 1372 "lemon.commands.c"
+#line 1386 "lemon.commands.c"
         break;
       case 41: /* backtraceparams ::= CMD_BACKTRACE_PARAM_FRAMECOUNT */
-#line 342 "lemon.commands.yy"
+#line 356 "lemon.commands.yy"
 {	
 	Command->params->p.backtrace_cmd_params.frameCount = atoi(yymsp[0].minor.yy0.tokenStr);
 }
-#line 1379 "lemon.commands.c"
+#line 1393 "lemon.commands.c"
         break;
       case 42: /* backtraceparams ::= CMD_BACKTRACE_PARAM_OTHERS */
-#line 346 "lemon.commands.yy"
+#line 360 "lemon.commands.yy"
 {
 	char *otherParamsStr = yymsp[0].minor.yy0.tokenStr;
 	if (strcmp(otherParamsStr, "full") == 0) {
 		Command->params->p.backtrace_cmd_params.full = TRUE;
 	}
 }
-#line 1389 "lemon.commands.c"
+#line 1403 "lemon.commands.c"
         break;
       case 43: /* backtraceparams ::= */
-#line 353 "lemon.commands.yy"
+#line 367 "lemon.commands.yy"
 {
 	Command->params->p.backtrace_cmd_params.frameCount = -1;
 	Command->params->p.backtrace_cmd_params.full = FALSE;
 }
-#line 1397 "lemon.commands.c"
+#line 1411 "lemon.commands.c"
         break;
       case 44: /* attach ::= CMD_ATTACH attachparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 362 "lemon.commands.yy"
+#line 376 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_ATTACH;
 }
-#line 1404 "lemon.commands.c"
+#line 1418 "lemon.commands.c"
         break;
       case 45: /* attachparams ::= CMD_ATTACH_PARAM_SESSION_ID */
-#line 366 "lemon.commands.yy"
+#line 380 "lemon.commands.yy"
 {
 	char *lSessionId = yymsp[0].minor.yy0.tokenStr;
 	strncpy_s(Command->params->p.attach_cmd_params.sessionId, SESSION_ID_LENGTH+2, lSessionId, SESSION_ID_LENGTH);
 	Command->params->p.attach_cmd_params.sessionId[SESSION_ID_LENGTH] = '\0';
 }
-#line 1413 "lemon.commands.c"
+#line 1427 "lemon.commands.c"
         break;
       case 46: /* attachparams ::= */
-#line 372 "lemon.commands.yy"
+#line 386 "lemon.commands.yy"
 {
 	Command->params->p.attach_cmd_params.sessionId[0] = '\0';
 }
-#line 1420 "lemon.commands.c"
+#line 1434 "lemon.commands.c"
         break;
       case 47: /* detach ::= CMD_DETACH semicolon cmdexecute CMD_END_OF_FILE */
-#line 381 "lemon.commands.yy"
+#line 395 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_DETACH;
 }
-#line 1427 "lemon.commands.c"
+#line 1441 "lemon.commands.c"
         break;
       case 48: /* kill ::= CMD_KILL semicolon cmdexecute CMD_END_OF_FILE */
-#line 389 "lemon.commands.yy"
+#line 403 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_KILL;
 }
-#line 1434 "lemon.commands.c"
+#line 1448 "lemon.commands.c"
         break;
       case 49: /* info ::= CMD_INFO infoparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 397 "lemon.commands.yy"
+#line 411 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_INFO;
 }
-#line 1441 "lemon.commands.c"
+#line 1455 "lemon.commands.c"
         break;
       case 50: /* infoparams ::= CMD_INFO_PARAM_LOCALS */
-#line 401 "lemon.commands.yy"
+#line 415 "lemon.commands.yy"
 {
 	Command->params->p.info_cmd_params.paramType = CMD_INFO_PARAM_TYPE_LOCALS;
 }
-#line 1448 "lemon.commands.c"
+#line 1462 "lemon.commands.c"
         break;
       case 51: /* infoparams ::= CMD_INFO_PARAM_ARGS */
-#line 405 "lemon.commands.yy"
+#line 419 "lemon.commands.yy"
 {
 	Command->params->p.info_cmd_params.paramType = CMD_INFO_PARAM_TYPE_ARGS;
 }
-#line 1455 "lemon.commands.c"
+#line 1469 "lemon.commands.c"
         break;
       case 52: /* infoparams ::= CMD_INFO_PARAM_GLOBALS */
-#line 409 "lemon.commands.yy"
+#line 423 "lemon.commands.yy"
 {
 	Command->params->p.info_cmd_params.paramType = CMD_INFO_PARAM_TYPE_GLOBALS;
 }
-#line 1462 "lemon.commands.c"
+#line 1476 "lemon.commands.c"
         break;
       case 53: /* infoparams ::= CMD_INFO_PARAM_FRAME */
-#line 413 "lemon.commands.yy"
+#line 427 "lemon.commands.yy"
 {
 	Command->params->p.info_cmd_params.paramType = CMD_INFO_PARAM_TYPE_FRAME;
 }
-#line 1469 "lemon.commands.c"
+#line 1483 "lemon.commands.c"
         break;
       case 54: /* show ::= CMD_SHOW showparams semicolon cmdexecute CMD_END_OF_FILE */
-#line 422 "lemon.commands.yy"
+#line 436 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_SHOW;
 }
-#line 1476 "lemon.commands.c"
+#line 1490 "lemon.commands.c"
         break;
       case 55: /* showparams ::= CMD_SHOW_PARAM_SESSION_COUNT */
-#line 426 "lemon.commands.yy"
+#line 440 "lemon.commands.yy"
 {
 	Command->params->p.show_cmd_params.sessionCountValue = SHOW_CMD_PARAM_SESSION_COUNT_VALUE_SET;
 }
-#line 1483 "lemon.commands.c"
+#line 1497 "lemon.commands.c"
         break;
       case 56: /* showparams ::= CMD_SHOW_PARAM_VERSION */
-#line 430 "lemon.commands.yy"
+#line 444 "lemon.commands.yy"
 {
 	Command->params->p.show_cmd_params.version = TRUE;
 }
-#line 1490 "lemon.commands.c"
+#line 1504 "lemon.commands.c"
         break;
       case 57: /* exit ::= CMD_EXIT semicolon cmdexecute CMD_END_OF_FILE */
-#line 439 "lemon.commands.yy"
+#line 453 "lemon.commands.yy"
 {
 	Command->tokenCode = CMD_EXIT;
 }
-#line 1497 "lemon.commands.c"
+#line 1511 "lemon.commands.c"
         break;
       case 58: /* invalidcommands ::= invalidchars CMD_END_OF_FILE */
-#line 448 "lemon.commands.yy"
+#line 462 "lemon.commands.yy"
 {
 	writeSyntaxError(yymsp[-1].minor.yy125);
 }
-#line 1504 "lemon.commands.c"
+#line 1518 "lemon.commands.c"
         break;
       case 59: /* invalidcommands ::= invalidchars cmdexecute CMD_END_OF_FILE */
-#line 452 "lemon.commands.yy"
+#line 466 "lemon.commands.yy"
 {
 	writeSyntaxError(yymsp[-2].minor.yy125);
 }
-#line 1511 "lemon.commands.c"
+#line 1525 "lemon.commands.c"
         break;
       default:
       /* (60) start ::= validcommands */ yytestcase(yyruleno==60);
@@ -1602,10 +1616,10 @@ static void yy_syntax_error(
   commandParseARG_FETCH;
 #define TOKEN yyminor
 /************ Begin %syntax_error code ****************************************/
-#line 26 "lemon.commands.yy"
+#line 40 "lemon.commands.yy"
 
 	Command->errorCode = COMMAND_ERROR_CODE_SYNTAX_ERROR;
-#line 1609 "lemon.commands.c"
+#line 1623 "lemon.commands.c"
 /************ End %syntax_error code ******************************************/
   commandParseARG_STORE; /* Suppress warning about unused %extra_argument variable */
 }
